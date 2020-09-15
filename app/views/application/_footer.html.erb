@@ -1,0 +1,58 @@
+<footer class="wrapper bg-dark text-white pt-10">
+  <section class="container">
+    <div class="row d-flex">
+      <div class="col-8">
+        <div class="mb-4">
+          <%= link_to root_path do %>
+            <%= image_tag 'transparent.png', height:"150px" %>
+          <% end %>
+        </div>
+
+        <div class="pl-4">
+          <div class="col-6 pl-0 mb-3">
+            <form>
+              <div class="input-group">
+                <%= text_field_tag 'email', '', class: 'form-control required email border-white bg-transparent text-white border-top-0 border-left-0 border-right-0 rounded-0' %>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="pl-1 mb-3">
+          <span class="copyright ml-0 ml-lg-4 d-block">&copy; <%= Time.zone.today.year %> June Properties
+        </div>
+      </div>
+
+      <div class="col-4 my-3">
+
+        <div class="d-flex justify-content-left text-center w-100 pt-6 pb-3 flex-wrap">
+          <span class="py-3">Contact</span>
+          <span class="text-justify">
+            +320123456 
+            <br />
+            Boulevard Saint-Miche l47,1040 ETTERBEEK
+          </span>
+        </div>
+        <div class="d-flex justify-content-left text-center w-100 pt-6 pb-3 flex-wrap">
+          <div class="">
+            <%= link_to "https://wa.me/32499319337", target: :blank, class: 'text-decoration-none lead px-2 text-white' do %>
+              <%= inline_svg 'social/whatsapp.svg', class: 'icon icon-white icon-sm' %>
+            <% end %>
+            <%= link_to "https://www.facebook.com/ColocHousing/", target: :blan, class: 'text-decoration-none lead px-2 text-white' do %>
+              <%= inline_svg 'social/facebook.svg', class: 'icon icon-white icon-sm' %>
+            <% end %>
+            <%= link_to "http://linkedin.com/company/colochousing/", target: :blank, class: 'text-decoration-none lead px-2 text-white' do %>
+              <%= inline_svg 'social/linkedin.svg', class: 'icon icon-white icon-sm' %>
+            <% end %>
+            <%= link_to "https://www.instagram.com/colochousing/", target: :blank, class: 'text-decoration-none lead px-2 text-white' do %>
+              <%= inline_svg 'social/instagram.svg', class: 'icon icon-white icon-sm' %>
+            <% end %>
+            <%= link_to "https://www.twitter.com/colochousing/", target: :blank, class: 'text-decoration-none lead px-2 text-white' do %>
+              <%= inline_svg 'social/twitter.svg', class: 'icon icon-white icon-sm' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
