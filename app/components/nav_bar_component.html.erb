@@ -1,0 +1,17 @@
+<header
+  class="navbar navbar-light navbar-expand-lg pr-4"
+  data-turbolinks-animate-persist="true"
+  data-controller="popper"
+  data-action="click->popper#toggle click@window->popper#clickOutside"
+>
+  <div class="d-flex justify-content-between align-items-center w-100 h-100">
+    <div class="d-flex align-items-center">
+      <div>
+        <%= render LogoComponent.new %>
+        <span>FOR RENT</span>
+      </div>
+    </div>
+    <div>
+      <span>ASK A QUESTION</span>
+    </div>
+</header>

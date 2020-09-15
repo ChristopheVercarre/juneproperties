@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.icon-sm {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+footer span.copyright {
+  grid-column: 2;
+  font-size: 12px;
+}
