@@ -1,0 +1,406 @@
+section.section-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+section.section-form.filters,
+section.section-form.filters div.form-register {
+  margin: 0 auto;
+}
+
+section.section-form.apply {
+  display: block;
+  max-width: 700px;
+  margin: -200px auto 0;
+  background: white;
+
+  @media (max-width: 900px) {
+    width: 100%;
+
+    form {
+      padding: 30px 30px 100px !important;
+    }
+  }
+}
+
+section.section-form.apply a.button {
+  margin: 0 auto;
+}
+
+section.section-form.getstarted-form form {
+  background: #FFF;
+}
+
+section.section-form div.form-register {
+  margin: 65px auto;
+}
+
+section.section-form div.form-register.login div.form-inputs {
+  min-width: 250px;
+}
+
+section.section-form form,
+section.section-form.apply div.success {
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.16);
+  padding: 30px 60px;
+}
+
+section.section-form.apply form {
+  padding: 30px 60px 150px;
+}
+
+body.fr section.section-form.apply form {
+  padding: 30px 60px 220px;
+}
+
+section.section-form.apply div.success {
+  padding: 30px 60px;
+}
+
+section.section-form.apply div.success p {
+  text-align: center;
+  margin: 40px 0;
+}
+
+section.section-form form label {
+  color: $coloc-cyan;
+  font-weight: 300;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  display: block;
+}
+
+section.section-form div.form-register.login form label {
+  display: initial;
+}
+
+section.section-form div.form-register.signup form label,
+section.section-form.apply form label,
+section.section-form.filters form label {
+  color: $peach;
+}
+
+main.dashboard.house,
+main.dashboard.house form label,
+section.getstarted-form form label {
+  color: $invest;
+}
+
+section.section-form form input {
+  border-bottom: 1px solid $coloc-cyan;
+  margin-bottom: 10px;
+  padding: 7px;
+  font-size: 14px;
+  width: 100%;
+}
+
+main.dashboard.house form input {
+  display: block;
+  border-bottom: 1px solid $invest;
+}
+
+section.section-form form select,
+section.section-form form input[type=text],
+section.section-form form input[type=date] {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  background: white;
+  font-size: 14px;
+  padding: 7px;
+  border-bottom: 1px solid $peach ;
+  margin-bottom: 10px;
+  font-weight: 100;
+
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+section.section-form form select#contract_application_form_coloc_nationality_code {
+  width: 100%;
+}
+
+main.dashboard.house div.form-group {
+  margin-bottom: 40px;
+}
+
+section.section-form div.form-register.signup form input,
+section.section-form.apply form input {
+  border-bottom: 1px solid $peach;
+}
+
+section.getstarted-form form input {
+  border-bottom: 1px solid $invest;
+}
+
+section.section-form form input::placeholder {
+  color: $light-grey;
+  font-weight: 100;
+}
+
+section.section-form form input[type="checkbox"] {
+  display: inline-block;
+  width: 20px;
+}
+
+section.section-form textarea {
+  width: 100%;
+  height: 100px;
+  margin: 5px auto;
+}
+
+section.section-form form div.form-actions {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+section.section-form form span.button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+section.section-form form span.button input.button-input {
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+
+section.section-form div.form-register form {
+  background: #fff;
+}
+
+section.section-form div.form-register form input.button-input:hover {
+  color: $coloc-blue;
+}
+
+section.getstarted-form form span.button input.button-input:hover {
+  color: $invest;
+}
+
+section.section-form div.form-register form span.gradient-orange input.button-input:hover,
+section.section-form.apply form input.button-input:hover,
+section.section-form.filters form input.button-input:hover {
+  color: $peach;
+}
+
+section.section-form div.form-register form.signup input.button-input:hover {
+  color: $coloc-cyan;
+}
+
+section.section-form form small {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+
+section.section-form div.form-register form abbr {
+  display: none;
+}
+// Delete the required *
+
+section.section-form div.form-register div.signup {
+  margin: 50px auto;
+  text-align: center;
+}
+
+section.section-form div.form-register div.signup a.button {
+  display: inline-block;
+  padding: 7px 15px;
+  margin: 0;
+  font-size: 14px;
+}
+
+section.section-form div.form-register div.signup a.button.facebook::before {
+  content: 'f';
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+section.section-form div.form-register div.signup a.links {
+  display: block;
+  color: $grey;
+  font-weight: 100;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+section.section-form div.form-register div.signup a.links:hover {
+  color: $peach;
+}
+
+section.section-form div.form-register form .invalid-feedback {
+  font-size: 14px;
+  color: $error;
+}
+
+section.section-form.apply div.flex,
+section.section-form.filters div.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.section-form.apply div.flex div.contract_application_form_coloc_birthday,
+section.section-form.apply div.flex.width div {}
+
+section.section-form.filters div.flex div {
+  margin: 0 20px 10px;
+}
+
+section.section-form.calendar {
+  display: block;
+  padding: 10px;
+}
+
+section.section-form.calendar form {
+  box-shadow: none;
+  padding: 0;
+}
+
+section.section-form.calendar input,
+section.section-form.calendar label {
+  width: auto;
+  color: $invest;
+  border-color: $invest;
+}
+
+section.section-form div#apply-popup {
+  display: none;
+  background: white;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  margin: 50px 50px 0;
+  padding-top: 20px;
+}
+
+section.section-form div#apply-popup h4 {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+section.section-form div#apply-popup h5 {
+  color: black;
+  font-weight: 100;
+}
+
+section.section-form div#apply-popup ul li {
+  margin-bottom: 20px;
+  line-height: 150%;
+  font-size: 15px;
+  color: $grey;
+}
+
+section.section-form div#apply-popup .disclaimer {
+  margin: 20px auto;
+}
+
+section.section-form div#apply-popup span.button {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  margin-left: calc(-258.17px/2);
+}
+
+section.section-form div#apply-popup span.button input.button-input {
+  padding: 10px 50px;
+}
+
+section.section-form div#apply-popup a {
+  color: $peach;
+}
+
+section.section-form div#apply-popup a:hover {
+  color: $grey;
+}
+
+.invalid-feedback {
+  font-size: 12px;
+  color: $error;
+  font-weight: 100;
+}
+
+.invalid-feedback::before {
+  content: 'Error : ';
+  font-size: 12px;
+  color: $error;
+  font-weight: 100;
+}
+
+body.contracts.new .form-group.contract_application_form_colocation_city_name {
+  width: 30%;
+}
+
+body.contracts.new .form-group.contract_application_form_colocation_address {
+  width: 65%;
+}
+section.section-form.filters div.flex.flex.advanced_search{
+  display: none;
+  transition: all .3s ease-in-out;
+  justify-content: center;
+}
+section.section-form.filters form label.button-advanced-search{
+  text-align: right;
+  text-transform: capitalize;
+  color:#666;
+  cursor:pointer;
+}
+.button-advanced-search::after{
+    content: '';
+    border: solid $grey;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px;
+    margin-left: 5px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in-out;
+}
+input#advanced_search:checked ~ .button-advanced-search::after{
+  transform: rotate(-135deg);
+}
+input#advanced_search:checked ~ .form-inputs.flex.advanced_search{
+  display: flex;
+  padding: 20px 0;
+}
+section.section-form.filters div.flex.advanced_search label{
+  color: black;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  line-height: 12px;
+}
+section.section-form.filters div.flex.advanced_search input{
+    margin: 0 5px 0 20px;
+    padding: 0;
+}
+@media only screen and (max-width: 500px) {
+  section.section-form.apply div.flex,
+  section.section-form.filters div.flex {
+    display: block;
+  }
+
+  section.section-form.apply input#coloc_avatar {
+    width: 100%;
+  }
+
+  section.section-form div.form-register.login div.form-inputs {
+    min-width: 0;
+  }
+}

@@ -1,0 +1,28 @@
+.icon-list {
+  @extend %mr-0, %w-100;
+
+  &__list-item {
+    @extend %d-f, %align-c;
+
+    &:not(:last-child) {
+      @extend %mb-4;
+    }
+  }
+
+  &__icon {
+    @extend %mr-4, .icon-circle--small;
+
+    flex-shrink: 0;
+  }
+
+  &__content {
+    @extend %text-l;
+
+    overflow: hidden;
+    word-wrap: break-word;
+
+    &--small {
+      @extend .icon-list__content, %paragraph-small;
+    }
+  }
+}

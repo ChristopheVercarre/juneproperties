@@ -1,0 +1,231 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin: 0px auto;
+}
+.banner::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+}
+.roomie .banner {
+  background-position: bottom;
+}
+
+.roomie .banner::before {
+  display: none;
+}
+.banner#room-infos{
+  height: calc(100vh - 120px);
+}
+#banner-content {
+  position: absolute;
+  bottom: 50px;
+  display: block;
+  width: 40%;
+  margin-left: 5vw;
+}
+.banner#room-infos #banner-content{
+  width: auto;
+}
+#banner-content h1 {
+  width: 100%;
+  color: #fff;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+#banner-content ul li {
+  display: inline-block;
+  color: white;
+  font-size: 18px;
+}
+
+#banner-content ul li.divider {
+  margin: 0 5px;
+}
+
+#banner-content ul li span {
+  color: $peach;
+}
+
+div#banner-content .section-form.filters {
+  justify-content: start;
+}
+
+.banner a.button {
+  display: block;
+  max-width: 250px;
+  padding: 10px 0;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.roomie .banner a.button {
+  display: none;
+}
+
+.banner a.button.transparent {
+  position: absolute;
+  bottom: 50px;
+  right: 5vw;
+  padding: 10px 30px;
+  text-align: center;
+}
+.banner#room-infos{
+  grid-column: 1/4;
+  height: calc(100vh - 160px);
+}
+.room-carousel {
+  height: calc(100vh - 160px);
+}
+.room-carousel .room-cell {
+  background-size: cover;
+  background-position: bottom center;
+  height: 100%;
+  width: 100%;
+}
+.banner#room-infos #banner-content h2,
+.banner#room-infos #banner-content h1{
+  text-align: left;
+  color:white;
+  font-family: $montserrat;
+  padding:0;
+}
+.banner#room-infos #banner-content h2{
+  font-size: 16px;
+}
+.banner#room-infos #banner-content h1{
+  font-weight: bold;
+}
+.room-carousel.video-tour{
+  display: none;
+  background: black;
+}
+#video-tour:checked  ~ .room-carousel.images{
+  display: none;
+}
+#video-tour:not(:checked)  ~ .room-carousel.images{
+  animation : appearSmoothly 1s forwards;
+}
+#video-tour:checked ~ .room-carousel.video-tour{
+  display: block;
+  animation : appearSmoothly 1s forwards;
+}
+@keyframes appearSmoothly{
+  from{opacity:0;display: block;}
+  to{opacity:1;}
+}
+#toggleBanner{
+  position: absolute;
+    margin-top: 10px;
+    right: 10px;
+    z-index: 99;
+    min-width: 130px;
+    text-align: center;
+    padding: 10px 0;
+}
+#toggleBanner #photos{
+  display: none;
+}
+#video-tour:checked ~ #toggleBanner #photos{
+  display: block;
+}
+#video-tour:checked ~ #toggleBanner #video{
+  display: none;
+}
+#video-tour:checked ~ #banner-content{
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .banner {
+    height: calc(60vh - 120px);
+  }
+    #video-tour:checked ~ div.room-apply,
+  #video-tour:not(:checked) ~ div.room-apply{
+    animation : none;
+    top:0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .banner {
+    width: 100vw;
+    height: calc(70vh - 120px);
+    margin: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .banner#room-infos{
+    height: 45vh;
+  }
+  .banner#room-infos::before{
+    content:none;
+  }
+  .room-carousel{
+    height: 35vh;
+  }
+  #banner-content {
+    width: 100%;
+    bottom: 50px;
+    margin: 10vh 0;
+  }
+  .banner#room-infos #banner-content{
+    position: relative;
+    margin: 20px;
+    width: 90%;
+    bottom: initial;
+  }
+  .banner#room-infos #banner-content h1,
+  .banner#room-infos #banner-content h2{
+    color: $text;
+  }
+  #banner-content h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #banner-content ul {
+    text-align: center;
+  }
+
+  #banner-content ul {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+
+  #banner-content ul li {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  #banner-content ul li span {
+    color: white;
+  }
+
+  .banner a.button {
+    position: absolute;
+    left: 5vw;
+    right: 5vw;
+    max-width: none;
+  }
+
+  div#banner-content .section-form.filters {
+    display: none;
+  }
+
+  .roomie .banner a.button {
+    display: block;
+  }
+}
+@media screen and (max-height: 667px) {
+  .banner {
+    height: calc(90vh - 120px);
+  }
+}

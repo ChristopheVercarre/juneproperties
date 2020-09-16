@@ -1,0 +1,33 @@
+.breadcrumb {
+  &-item {
+    color: $text-muted;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    font-weight: 300;
+
+    &.active {
+      font-weight: 500;
+    }
+
+    a {
+      display: flex;
+      text-decoration: none;
+
+      svg {
+        vertical-align: baseline;
+        margin-bottom: 3px;
+        height: $font-size-sm;
+        width: $font-size-sm;
+
+        * {
+          fill: $text-muted;
+        }
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

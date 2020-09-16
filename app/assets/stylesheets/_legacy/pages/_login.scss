@@ -1,0 +1,184 @@
+section.section-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.section-register div.form-register {
+  margin: 65px auto;
+}
+
+.getstarted-form form,
+main.dashboard.house form,
+section.section-register div.form-register form {
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.16);
+  padding: 30px 60px;
+}
+
+div.getstarted-form form label,
+main.dashboard.house form label,
+section.section-register div.form-register form label,
+section.user-details form label {
+  color: $coloc-cyan;
+  font-weight: 300;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+section.section-register div.form-register.signup form label {
+  color: $peach;
+}
+
+div.getstarted-form form label,
+main.dashboard.house,
+main.dashboard.house form label {
+  color: $invest;
+}
+
+div.getstarted-form form input,
+main.dashboard.house form input,
+section.section-register div.form-register form input,
+section.user-details input {
+  border-bottom: 1px solid $coloc-cyan;
+  margin-bottom: 10px;
+  padding: 7px;
+  font-size: 14px;
+  width: 100%;
+}
+
+main.dashboard.house form input {
+  display: block;
+  border-bottom: 1px solid $invest;
+}
+
+main.dashboard.house div.form-group {
+  margin-bottom: 40px;
+}
+
+section.section-register div.form-register.signup form input {
+  border-bottom: 1px solid $peach;
+}
+
+div.getstarted-form form input {
+  border-bottom: 1px solid $invest;
+}
+
+div.getstarted-form form input::placeholder,
+section.section-register div.form-register form input::placeholder {
+  color: $light-grey;
+  font-weight: 100;
+}
+
+section.section-register div.form-register form input[type="checkbox"] {
+  display: inline-block;
+  width: 20px;
+}
+
+div.getstarted-form form div.form-actions,
+section.section-register div.form-register form div.form-actions {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+div.getstarted-form form span.button,
+section.section-register div.form-register form span.button {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+div.getstarted-form form span.button input.button-input,
+section.section-register div.form-register form input.button-input {
+  padding: 10px 60px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 0;
+}
+
+section.section-register div.form-register form input.button-input:hover {
+  color: $coloc-blue;
+}
+
+div.getstarted-form form span.button input.button-input:hover {
+  color: $invest;
+}
+
+section.section-register div.form-register form span.gradient-orange input.button-input:hover {
+  color: $peach;
+}
+
+section.section-register div.form-register form.signup input.button-input:hover {
+  color: $coloc-cyan;
+}
+
+section.section-register div.form-register form small {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+
+section.section-register div.form-register form abbr {
+  display: none;
+}
+// Delete the required *
+
+section.section-register div.form-register div.signup {
+  margin: 50px auto;
+  text-align: center;
+}
+
+section.section-register div.form-register div.signup a.button {
+  display: inline-block;
+  padding: 7px 15px;
+  margin: 0;
+  font-size: 14px;
+}
+
+section.section-register div.form-register div.signup a.button.facebook::before {
+  content: 'f';
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+section.section-register div.form-register div.signup a.links {
+  display: block;
+  color: $grey;
+  font-weight: 100;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+section.section-register div.form-register div.signup a.links:hover {
+  color: $peach;
+}
+
+section.section-register div.form-register form .invalid-feedback {
+  font-size: 14px;
+  color: $error;
+}
+
+section.section-register div.form-register form div.user_birthday div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section.section-register div.form-register form select {
+  border: none;
+  border-bottom: 1px solid $peach;
+  border-radius: 0;
+  background: white;
+  font-family: $body-font !important;
+  font-size: 14px;
+  appearance: none;
+  padding: 7px;
+  margin-bottom: 10px;
+  flex-grow: 1;
+  margin-right: 10px;
+}

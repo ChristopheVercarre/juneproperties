@@ -1,0 +1,31 @@
+@keyframes lamp {
+  0% {
+    background-image: asset-url('animated/lamp/1.png');
+  }
+  50% {
+    background-image: asset-url('animated/lamp/1.png');
+  }
+  51% {
+    background-image: asset-url('animated/lamp/2.png');
+  }
+  99% {
+    background-image: asset-url('animated/lamp/2.png');
+  }
+  100% {
+    background-image: asset-url('animated/lamp/1.png');
+  }
+}
+
+.animate-with-lamp {
+  background-size: cover;
+  background-position: center;
+  background-image: asset-url('animated/lamp/1.png');
+  // animation-name: lamp;
+  // animation-duration: 3s;
+  // animation-timing-function: linear;
+  // animation-delay: .5s;
+  // animation-iteration-count: infinite;
+  // animation-direction: forwards;
+  // animation-fill-mode: forwards;
+  // animation-play-state: ;
+}

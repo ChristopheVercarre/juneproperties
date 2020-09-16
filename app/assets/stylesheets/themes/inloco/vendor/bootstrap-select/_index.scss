@@ -1,0 +1,73 @@
+$search-select-icon-size: 20px;
+
+.bootstrap-select > select.mobile-device:focus + .dropdown-toggle, .bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.bootstrap-select {
+  .btn {
+    @extend .py-1, .pr-4;
+
+    font-size: $font-size-sm;
+    transition: all .2s ease-in-out;
+
+    small.text-muted {
+      display: none;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+      background: $light;
+    }
+  }
+
+  .no-results {
+    @extend .px-3, .mx-2, .mt-2, .rounded-sm, .small;
+  }
+
+  small {
+    @extend .text-black, .pl-0;
+  }
+
+  .active {
+    small {
+      @extend .text-black;
+    }
+  }
+
+  .dropdown-menu li,
+  .dropdown-menu li.active {
+    span.text {
+      font-size: $font-size-sm;
+    }
+
+    small {
+      @extend .text-black;
+    }
+  }
+
+  &-search {
+    @extend .position-relative;
+
+    max-width: 300px;
+
+    &::after {
+      @extend .position-absolute;
+
+      content: asset-data-url('icons/navbar-search.svg');
+      top: calc(#{$spacer / 4} + #{$font-size-sm / 2});
+      height: 18px;
+      left: 1rem;
+    }
+
+    .btn {
+      &[aria-expanded="true"] {
+        width: 100%;
+      }
+    }
+
+    .bootstrap-select {
+      width: 100% !important;
+    }
+  }
+}

@@ -1,0 +1,1018 @@
+// ================================= Generals settings =================================
+
+main.dashboard {
+  display: grid;
+  grid-template-columns: 80px minmax(80px, 1fr) minmax(768px,1100px) minmax(80px, 1fr);
+  width: 100%;
+  margin: 0;
+  min-height: 70vh;
+}
+
+main.dashboard.coloc {
+  row-gap: 0;
+}
+
+main.dashboard h1 {}
+
+main.dashboard h2 {
+  font-size: 24px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: left;
+  padding: 0;
+}
+
+main.dashboard h2::after {
+  content: '';
+  display: block;
+  border-bottom: 2px solid grey;
+  width: 87px;
+  margin-top: 10px;
+}
+
+main.dashboard.coloc h2::after {
+  border-color: $coloc-cyan;
+}
+
+main.dashboard.owner h2::after {
+  border-color: $invest;
+}
+
+main.dashboard h2 a {
+  color: $dark-blue;
+  font-size: 12px;
+  text-transform: initial;
+  float: right;
+  margin-top: 10px;
+}
+
+main.dashboard h3,
+main.dashboard h3 a {
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0;
+}
+
+main.dashboard h3 a span,
+main.dashboard h3 span {
+  font-size: 14px;
+  color: $grey;
+  display: block;
+  font-weight: 100;
+}
+
+main.dashboard h4 {
+  color: $dark-blue;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+main.dashboard h4 a {
+  color: $light-grey;
+  font-size: 12px;
+  font-weight: 100;
+  float: right;
+  margin-right: 20px;
+}
+
+main.dashboard h5 {
+  color: $light-grey;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main.dashboard h5::after {
+  content: '';
+  border-bottom: 3px solid $dark-white;
+  width: 80%;
+  margin-left: 20px;
+}
+
+main.dashboard a {}
+
+main.dashboard.coloc a:hover {
+  color: $coloc-cyan;
+}
+
+main.dashboard.owner a:hover {
+  color: $invest;
+}
+
+main.dashboard p {}
+
+main.dashboard span.labels {
+  color: $light-grey;
+  font-size: 10px;
+  font-weight: 100;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 768px) {
+  main.dashboard {
+    grid-template-columns: 20px 1fr 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  main.dashboard {
+    display: block;
+  }
+}
+// ================================= Nav =================================
+
+aside.dashboard-nav {
+  position: fixed;
+  z-index: 99;
+  width: 80px;
+  overflow: hidden;
+  left: 0;
+  top: 80px;
+  bottom: 0;
+  background: rgba(255,255,255,.95);
+  box-shadow: $shadow;
+  transition: $ease;
+  display: flex;
+  flex-direction: column;
+}
+
+aside.dashboard-nav ul {
+  margin: 0 auto;
+  padding-top: 65px;
+  width: 30px;
+  transition: $ease;
+  display: flex;
+  flex-direction: column;
+}
+
+aside.dashboard-nav ul li {
+  width: 150px;
+  margin-left: 4px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+aside.dashboard-nav ul li.nav-avatar {
+  width: auto;
+  margin-left: -4px;
+}
+
+aside.dashboard-nav ul li.nav-avatar div.img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 65px auto 40px;
+}
+
+aside.dashboard-nav ul li a {
+  color: $grey;
+  transition: $ease;
+}
+
+aside.dashboard-nav ul li a i.icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+aside.dashboard-nav ul li a span {
+  opacity: 0;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+
+main.dashboard.coloc aside.dashboard-nav ul li a.active,
+main.dashboard.coloc aside.dashboard-nav ul li a:hover {
+  color: $coloc-cyan;
+}
+
+main.dashboard.owner aside.dashboard-nav ul li a.active,
+main.dashboard.owner aside.dashboard-nav ul li a:hover {
+  color: $invest;
+}
+// Hover system
+
+aside.dashboard-nav:hover {
+  width: 255px;
+}
+
+aside.dashboard-nav:hover ul {
+  width: 150px;
+}
+
+aside.dashboard-nav:hover ul li a span {
+  opacity: 1;
+}
+
+aside.dashboard-nav:hover ul li {
+  text-align: left;
+}
+@media only screen and (max-width: 768px) {
+  aside.dashboard-nav {
+    left: 0;
+    bottom: 0;
+    top: inherit;
+    right: 0;
+    width: 100%;
+    height: 46px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    z-index: 99999;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  aside.dashboard-nav ul {
+    width: auto;
+    padding-top:0;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  aside.dashboard-nav ul li {
+    width: 20vw;
+    margin: 0;
+    order: 1;
+    text-align: center;
+  }
+
+  aside.dashboard-nav ul li.nav-avatar {
+    order: 5;
+    width: 20vw;
+    margin: 0;
+  }
+
+  aside.dashboard-nav ul li.nav-avatar div.img {
+    margin: 0 auto;
+    width: 22px;
+    height: 22px;
+  }
+
+  aside.dashboard-nav:hover {
+    width: auto;
+  }
+
+  aside.dashboard-nav:hover ul {
+    width: auto;
+  }
+
+  aside.dashboard-nav:hover ul li {
+    text-align: center;
+  }
+
+  aside.dashboard-nav ul li a span {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {}
+// ================================= Content section =================================
+
+main.dashboard section {
+  grid-column: 3;
+  padding-top: 65px;
+}
+
+section div.colocations-grid {
+  margin-top: 30px;
+  margin-bottom: 65px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 20px;
+}
+
+section div.tenants-grid {
+  margin-bottom: 65px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px,1fr));
+  grid-gap: 20px;
+}
+
+section.applications div.grid,
+section.contract div.grid,
+section.housemates div.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  margin: 45px auto 65px;
+  grid-gap: 12px;
+  justify-items: center;
+}
+section.notifications-list{
+  margin: 0px 0 65px;
+}
+section.applications div.no-results,
+section.housemates div.no-results {
+  margin: 45px auto 65px;
+  justify-items: center;
+}
+@media only screen and (max-width: 768px) {
+  main.dashboard section {
+    grid-column: 2;
+    padding: 20px 20px 0;
+  }
+
+  section div.tenants-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  }
+}
+@media only screen and (max-width: 500px) {
+  section div.tenants-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  }
+}
+// ================================= Cards =================================
+
+.cards {
+  position: relative;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cards::after {
+  content: '';
+  position: absolute;
+  background: white;
+  box-shadow: $shadow;
+  border-radius: 10px;
+  z-index: -9;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cards.links {
+  padding: 20px 20px 0;
+}
+
+.cards.links:hover {
+  box-shadow: none;
+}
+
+.cards h3 {
+  margin-bottom: 20px;
+}
+
+.cards.links h3 a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.cards ul.infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-items: stretch;
+}
+.cards ul.infos.rent-dates{
+      display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+.cards ul.infos li {
+  font-size: 14px;
+  font-weight: 400;
+  width: 50%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.cards ul.infos.rent-dates li:last-child{
+  grid-column: 2;
+}
+div.colocations-grid .cards ul.infos li {
+  text-align: center;
+}
+
+.cards ul.infos li div.c100 {
+  display: block;
+  margin: 0 auto;
+  float: none;
+}
+// ---------------------------------------- Owner dashboard ----------------------------------------
+
+.cards.room {
+  display: flex;
+  padding-left: 0;
+}
+
+.cards.room::after {
+  left: 15%;
+}
+
+.cards.room div.room-img {
+  width: 120px;
+  min-height: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  box-shadow: $shadow;
+}
+.cards.room  .room-informations{
+  width:100%;
+}
+
+.cards.room h3 {
+  margin-bottom: 10px;
+}
+
+.cards.room i.icon-Accepted {
+  color: $green;
+  margin-left: 10px;
+}
+
+.cards.room i.icon-Refused {
+  color: $red;
+  margin-left: 10px;
+}
+
+.cards.room div.room-tenant {
+  display: flex;
+}
+
+.cards.room div.room-tenant .room-tenant-infos {
+  width: 100%;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.cards.room div.room-tenant div.room-tenant-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: $shadow;
+  margin-right: 10px;
+}
+
+.cards.room div.room-tenant ul {
+  margin-top: 5px;
+}
+
+.cards.room div.room-tenant ul li {
+  margin-bottom: 0;
+}
+// ---------------------------------------- Coloc dashboard ----------------------------------------
+
+.cards.room.application {
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cards.room.application h3 {
+  margin: 20px 0;
+}
+
+.cards.room.application:after {
+  left: 0;
+  top: 100px;
+}
+
+.cards.room.application div.room-img {
+  height: 120px;
+  width: 200px;
+  display: inline-block;
+  vertical-align: bottom;
+  border: 3px solid;
+}
+
+.cards.room.application.pending div.room-img {
+  border-color: $light-grey;
+}
+
+.cards.room.application.accepted div.room-img {
+  border-color: $coloc-cyan;
+}
+
+.cards.room.application.refused div.room-img {
+  border-color: $error;
+}
+
+.cards.room.application i.icon {
+  margin-left: 7px;
+  vertical-align: super;
+  display: inline-block;
+  font-size: 23px;
+}
+
+.cards.room.application.pending i.icon {
+  color: $light-grey;
+}
+
+.cards.room.application.accepted i.icon {
+  color: $coloc-cyan;
+}
+
+.cards.room.application.refused i.icon {
+  color: $error;
+}
+
+.cards.application ul.infos li {
+  width: auto;
+  margin-bottom: 0;
+}
+
+div.if-empty {
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0;
+}
+// ---------------------------------------- Contracts ----------------------------------------
+
+.contract-item p {
+  width: 200px;
+  color: $light-grey;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.contract-item input {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.contract-item.moveOut label {
+  display: none;
+}
+
+.contract-item.moveOut input[type=text] {
+  border: 1px solid $input-border;
+  border-radius: 4px;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.contract-item.moveOut .disabled,
+.contract-item.moveOut .disabled:hover {
+  background: $dark-white;
+  box-shadow: none;
+  border-color: $dark-white;
+  color: $light-grey;
+  cursor: not-allowed;
+}
+// ---------------------------------------- Payement details ----------------------------------------
+
+.payement-details div.cards {
+  margin-top: 20px;
+}
+
+.payement-details div.cards ul.infos li {
+  color: $invest;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+.payement-details div.cards ul.infos li span.labels {
+  color: $dark-blue;
+}
+
+.payement-details div.cards ul.infos li:first-child {
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+// ---------------------------------------- Applications ----------------------------------------
+@keyframes wave {
+  // Animate the 3 dots
+  0% {
+    transform: skewY(0) translateY(0);
+  }
+
+  15% {
+    transform: skewY(7deg) translateY(0);
+  }
+
+  30% {
+    transform: skewY(3deg) translateY(-1px);
+  }
+
+  45% {
+    transform: skewY(0deg) translateY(-2px);
+  }
+
+  60% {
+    transform: skewY(-3deg) translateY(-1px);
+  }
+
+  75% {
+    transform: skewY(-7deg) translateY(0px);
+  }
+
+  100% {
+    transform: skewY(0) translateY(0);
+  }
+}
+
+.application i.icon.icon-Pending {
+  animation-duration: 0.9s;
+  animation-timing-function: ease-in-out;
+  animation-name: wave;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+.application .progress {
+  padding: 0 5px;
+  margin: 0;
+}
+
+.application.refused .progress h5 {
+  padding: 5px 0 0;
+  color: $error;
+}
+
+.application ul.progress li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  margin-right: 2px;
+  border-top: 2px solid $light-grey;
+  padding-top: 5px;
+}
+
+.application ul.progress li.active {
+  color: black;
+  border-color: black;
+  font-weight: 400;
+}
+
+.application ul.progress li:last-child {
+  margin-right: 0;
+}
+// ---------------------------------------- Housemates ----------------------------------------
+
+.cards.housemate {
+  justify-self: stretch;
+}
+
+.cards.housemate h3 a {
+  color: black;
+}
+
+.cards.housemate::after {
+  top: 60px;
+}
+
+.cards.housemate div.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.cards.housemate span.room-number {
+  font-size: 24px;
+  color: $light-grey;
+}
+
+.cards.housemate div.img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: $shadow;
+  border: 3px solid;
+}
+
+.cards.housemate.coloc div.img {
+  border-color: $coloc-cyan;
+}
+
+.cards.housemate.manager div.img {
+  border-color: $peach;
+}
+
+.cards.housemate ul.infos li {
+  width: auto;
+  margin-bottom: 0;
+}
+
+.cards.housemate span.job {
+  display: block;
+  font-size: 14px;
+  color: $grey;
+  font-weight: 100;
+}
+// ---------------------------------------- Calendar ----------------------------------------
+
+section.house-reports ul {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+section.house-reports span.labels {
+  color: $invest;
+}
+
+div.tenants ul.calendar {
+  position: relative;
+  display: flex;
+  border: 1px solid white;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+ul.calendar li {
+  position: relative;
+  flex-grow: 1 !important;
+}
+
+ul.house.box-border li {
+  flex-grow: 1 !important;
+}
+
+ul.calendar div.calendar-bar {
+  border-bottom: solid 3px $dark-white;
+  bottom: -15px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  cursor: pointer;
+}
+
+ul.calendar div.calendar-bar a.calendar-bar-name {
+  position: absolute;
+  visibility: hidden;
+  background: white;
+  z-index: 9;
+  padding: 10px 20px;
+  left: -10px;
+  margin-top: 20px;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+ul.calendar div.calendar-bar a.calendar-bar-name::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  border: solid 15px transparent;
+  border-bottom-color: #FFF;
+  filter: drop-shadow(0px -1px 1px rgba(0, 0, 0, 0.05));
+}
+
+ul.calendar div.calendar-bar a.calendar-bar-name:hover {
+  color: $grey;
+}
+
+ul.calendar div.calendar-bar:hover > a.calendar-bar-name {
+  visibility: visible;
+  opacity: 1;
+}
+
+section.house-reports ul li.house-name,
+ul li.tenant-name {
+  width: 140px;
+  font-weight: 600;
+  text-align: left;
+}
+
+section.house-reports ul li.room-name {
+  width: 140px;
+}
+
+section.house-reports ul li.house-name a {
+  color: black;
+  cursor: pointer;
+}
+
+section.house-reports ul li.house-name a:hover {
+  color: black;
+}
+
+div.tenants ul li span,
+section.house-reports ul li span {
+  margin-bottom: 10px;
+}
+
+section.house-reports ul li a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+section.house-reports ul:hover {
+  box-shadow: none;
+  border: 1px solid $light-grey;
+}
+
+section.house-reports ul.month-reports:hover {
+  border: 1px solid white;
+}
+
+hr.tenant-hr {
+  border: none;
+  border-bottom: 1px solid $light-grey;
+}
+
+div.details {
+  height: 0;
+  overflow: hidden;
+}
+
+div.details.openReport {
+  height: auto;
+}
+
+div.details.is-open {
+  height: auto;
+  overflow: unset;
+  margin-bottom: 20px;
+}
+
+div.house-infos-mobile {
+  display: none;
+}
+// ---------------------------------------- Calendar mobile version ----------------------------------------
+
+div.house-infos-mobile {
+  position: relative;
+  min-height: 210px;
+}
+
+div.house-infos-mobile.height {
+  height: 980px;
+}
+
+div.house-infos-mobile ul.calendar.is-open > div.house-infos-mobile {
+  min-height: 720px;
+}
+
+div.house-infos-mobile div.house {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  width: 280px;
+  background: #fff;
+  transition: $ease;
+}
+
+div.house-infos-mobile div.house div.roomButtons {
+  font-size: 14px;
+  color: $light-grey;
+  font-weight: 100;
+  float: right;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px;
+}
+
+div.house-infos-mobile div.house div.roomButtons i {
+  color: $light-grey;
+  font-size: 16px;
+  vertical-align: text-bottom;
+}
+
+div.house-infos-mobile div.head {
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+}
+
+div.house-infos-mobile ul {
+  padding: 10px 0 0;
+}
+
+div.house-infos-mobile ul:hover {
+  border: none;
+}
+
+div.house-infos-mobile ul.calendar {
+  height: 0;
+  overflow: hidden;
+}
+
+div.house-infos-mobile ul.calendar.is-open {
+  height: auto;
+  overflow: unset;
+  margin-bottom: 20px;
+}
+
+div.house-infos-mobile ul li.coloc,
+div.house-infos-mobile ul.calendar li div.coloc {
+  position: relative;
+  flex: 1;
+  margin-left: 20px;
+}
+
+div.house-infos-mobile ul.calendar li div.coloc {
+  padding-bottom: 10px;
+}
+
+div.house-infos-mobile ul li.room-number,
+div.house-infos-mobile ul.calendar li div.month-rent {
+  width: 80px;
+  flex: initial;
+}
+
+div.house-infos-mobile div.calendar-bar,
+div.house-infos-mobile ul.calendar li div.coloc div.calendar-bar {
+  border: none;
+  width: 0;
+  bottom: initial;
+  border-left: solid 3px $dark-white;
+  margin-left: -15px;
+  position: absolute;
+  height: 100%;
+  cursor: pointer;
+}
+
+div.house-infos-mobile ul.calendar {
+  display: block;
+}
+
+div.house-infos-mobile ul.calendar li {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .payement-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: -1000;
+    opacity: 0;
+    transition: $ease;
+  }
+
+  .payement-details div.white-background {
+    background: white;
+    margin-top: -400px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: $ease;
+  }
+
+  .payement-details div.cards {
+    background: $invest;
+    border-radius: 10px;
+  }
+
+  .payement-details div.cards ul.infos li {
+    color: white;
+  }
+
+  section.house-reports ul {
+    flex-wrap: wrap;
+  };
+
+  section.house-reports ul li {
+    flex: 1;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .cards.room {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .cards.room div.room-img {
+    height: 150px;
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .cards.room::after {
+    left: 0;
+    top: 60px;
+  }
+
+  div.house-infos-mobile {
+    display: block;
+  }
+}

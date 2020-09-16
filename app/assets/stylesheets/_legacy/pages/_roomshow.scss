@@ -1,0 +1,155 @@
+.flickity-page-dots {
+  display: none !important;
+}
+main.room-show {
+  padding-top: 80px;
+  font-family: $asap;
+  color: $text;
+  row-gap: 96px;
+}
+/* === Price banner === */
+.room-apply{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  box-sizing: border-box;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  background: rgba(255,255,255,.95);
+}
+.room-apply p{
+  color: $text;
+}
+.room-apply p.availability{
+  margin-bottom: 0;
+}
+.room-apply p.room-informations{
+  font-family: $montserrat;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 100%;
+  margin:0;
+}
+.room-apply p.room-informations span{
+  font-size: 14px;
+  font-family: $asap;
+  font-weight: 100;
+}
+.room-apply p.room-informations a{
+  display: block;
+  font-size: 12px;
+  font-family: $asap;
+  font-weight: 100;
+  color: $text;
+}
+.room-apply p.room-informations a:hover{
+  color: $peach;
+  text-decoration: underline;
+}
+.room-apply .room-apply-buttons{
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+.room-apply .room-apply-buttons p{
+  margin:0;
+}
+.room-apply .room-apply-buttons .availability {
+  margin-right: 20px;
+}
+.room-apply .room-apply-buttons .button.gradient-orange{
+  min-width: 200px;
+  font-size: 14px;
+  margin: 0 20px;
+}
+.room-apply .room-apply-buttons .button.white.watch,
+.room-apply .room-apply-buttons .button.white.unwatch{
+  padding: 11px 12px 11px 15px;
+}
+.watchlist-remove {
+  cursor: pointer;
+}
+#watchlist-toggle a.button.white::before{
+  font-family: 'icomoon' !important;
+  padding-right: 5px;
+  font-size:14px;
+}
+#watchlist-toggle a.button.white.watch::before{
+  content:'\f08a';
+}
+#watchlist-toggle a.button.white.unwatch::before{
+  content:'\f004';
+}
+/* Amenities */
+main.room-show section.house-details.amenities ul li,
+main.room-show h3.dark-blue{
+  color: $dark-blue;
+}
+/* House details */
+.house-details h2{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+}
+.house-details h2 a{
+  color: $text;
+}
+.house-details h2 a:hover{
+  color:$peach;
+}
+.housemates h3{
+  font-weight: bold;
+  color: $dark-blue;
+  margin: 0 25px;
+}
+@media only screen and (max-width: 768px) {
+  .room-apply p.room-informations{
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  main.room-show{
+    row-gap: 32px;
+  }
+  .room-apply{
+    position: relative;
+    flex-direction: column;
+    padding:0;
+    height: auto;
+    align-items:start;
+    z-index: 1;
+  }
+  .room-apply .room-apply-buttons{
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .room-apply .room-apply-buttons .button.gradient-orange,
+  .room-apply .room-apply-buttons .button.white.watch{
+    margin: 10px 0;
+    display: inline-block;
+  }
+  .room-apply .room-apply-buttons .button.gradient-orange{
+    min-width: 170px;
+  }
+  .room-apply .room-apply-buttons .button.white.watch{
+    margin-left:10px;
+  }
+  main.room-show section.house-details.amenities div.description{
+    margin-top: 75px;
+  }
+  section.house-details div.description p{
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  main.room-show section.housemates div.grid{
+    margin: 0px auto 65px;
+  }
+  main.room-show section.housemates{
+    margin-top: 45px;
+  }
+}

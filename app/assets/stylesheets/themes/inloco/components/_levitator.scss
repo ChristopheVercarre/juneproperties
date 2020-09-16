@@ -1,0 +1,6 @@
+.levitator {
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: 100px;
+  }
+}

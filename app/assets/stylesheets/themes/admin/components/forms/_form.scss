@@ -1,0 +1,77 @@
+.form {
+  &__row {
+    @extend .row, %l-pb-1, %align-fe;
+
+    flex-wrap: wrap;
+
+    & > *:not(:last-child) {
+      @extend %mr-2;
+    }
+
+    &--content-sb {
+      @extend .form__row, %justify-sb;
+    }
+
+    &--content-sb--one-line {
+      @extend .form__row--content-sb;
+
+      flex-wrap: nowrap;
+
+      & > * {
+        flex: 1 1 auto;
+
+        input[type="submit"] {
+          @extend %mt-3;
+        }
+      }
+    }
+
+    &--content-se {
+      @extend .form__row, %justify-se;
+    }
+
+    &--content-c {
+      @extend .form__row, %justify-c;
+    }
+
+    &--actions {
+      @extend .form__row--content-c, %l-pt-1;
+    }
+
+    &--without-spacing {
+      @extend .row;
+
+      & > *:not(:last-child) {
+        @extend %mr-2;
+      }
+
+      & > .custom-input {
+        flex: 1 1 auto;
+      }
+    }
+
+    & > .custom-input {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__row-title {
+    @extend %w-100, %text-c, %mb-5;
+
+    flex-shrink: 0;
+
+    &-title {
+      @extend %w-100, %text-c, %mb-5;
+    }
+
+    &--left {
+      @extend .form__row-title, %text-l;
+    }
+  }
+
+  &__helper {
+    @extend %d-f;
+
+    max-width: 50%;
+  }
+}

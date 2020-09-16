@@ -1,0 +1,9 @@
+.status_tag {
+  &.cover {
+    background: $green;
+  }
+
+  &.showcase {
+    background: $orange;
+  }
+}

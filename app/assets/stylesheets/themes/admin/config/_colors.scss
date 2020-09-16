@@ -1,0 +1,83 @@
+$green: #1b998b;
+$red: #d72d33;
+$yellow: #fece1f;
+$blue: #3c6895;
+
+$black: #000;
+$gray-dark: #8b8a8a;
+$gray: #b0afaf;
+$gray-light: #e6e5e5;
+$white-dark: #f7f6f6;
+$white: #fff;
+
+$primary: linear-gradient(45deg, 0% #{$red}, 100% #{$yellow});
+
+$success: $green;
+$error: $red;
+$warning: $yellow;
+$info: $blue;
+
+$border-color: $white-dark;
+$dark-border-color: $gray-light;
+$light-text-color: $gray-dark;
+$muted-text-color: $gray;
+
+$theme-colors: (
+  primary: $primary,
+  success: $success,
+  error: $error,
+  warning: $warning,
+  info: $info,
+);
+
+$transparent-theme-colors: (
+  success: rgba(#1b998b, .1),
+  error: rgba(#d72d33, .1),
+  warning: rgba(#fece1f, .1),
+  info: rgba(#3c6895, .1)
+);
+
+$gray-scale: (
+  black: $black,
+  gray-dark: $gray-dark,
+  gray: $gray,
+  gray-light: $gray-light,
+  white-dark: $white-dark,
+  white: $white,
+  transparent: transparent
+);
+
+$all-colors: map-merge($theme-colors, $gray-scale);
+
+@each $color-name, $color-code in $all-colors {
+  %text-#{$color-name} {
+    color: $color-code;
+  }
+
+  %bg-#{$color-name} {
+    background: $color-code;
+  }
+
+  %border-#{$color-name} {
+    border-color: $color-code;
+  }
+
+  // utility class
+  .text--#{$color-name} {
+    @extend %text-#{$color-name};
+  }
+}
+
+@each $color-name, $color-code in $transparent-theme-colors {
+  %text-transparent-#{$color-name} {
+    color: $color-code;
+  }
+
+  %bg-transparent-#{$color-name} {
+    background: $color-code;
+  }
+
+  %border-transparent-#{$color-name} {
+    border-color: $color-code;
+  }
+}

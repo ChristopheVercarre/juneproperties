@@ -1,0 +1,82 @@
+$spacer-options: (
+  m: 'margin',
+  p: 'padding'
+);
+
+$direction-options: (
+  t: 'top',
+  r: 'right',
+  l: 'left',
+  b: 'bottom'
+);
+
+$axis-options: ('x', 'y', '');
+
+$dimension-options: (
+  h: 'height',
+  w: 'width'
+);
+
+$position-options: (absolute, relative, fixed, sticky, static);
+
+$object-size-options: (cover, contain);
+
+$display-options: (
+  n: none,
+  b: block,
+  i: inline,
+  ib: inline-block,
+  f: flex,
+  if: inline-flex,
+  g: grid,
+  ig: inline-grid,
+  t: table,
+  it: inline-table,
+  tca: table-caption,
+  tc: table-column,
+  tcg: table-column-group,
+  tr: table-row,
+  trg: table-row-group,
+  td: table-cell,
+  c: contents,
+  li: list-item,
+  ri: run-in
+);
+
+$justify-options: (
+  sb: space-between,
+  sa: space-around,
+  se: space-evenly,
+  fs: flex-start,
+  fe: flex-end,
+  c: center
+);
+
+$align-options: (
+  fs: flex-start,
+  fe: flex-end,
+  c: center,
+  s: stretch,
+);
+
+$flex-direction-options: (
+  r: row,
+  rr: row-reverse,
+  c: column,
+  cr: column-reverse
+);
+
+$text-align-options: (c: center, l: left, r: right, j: justify);
+
+// breakpoints
+$sm-breakpoint: 576px;
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+$xl-breakpoint: 1200px;
+
+// avatar
+$avatar-size: 50px;
+$avatar-size-lg: 100px;
+$avatar-size-sm: 40px;
+
+$bottom-accent-width: 50px;

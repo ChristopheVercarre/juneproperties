@@ -1,0 +1,36 @@
+.nav-tabs {
+  .nav-link {
+    text-decoration: none;
+
+    &:not(.active):not(:hover) {
+      color: $gray-700;
+    }
+
+    &:focus:not(.active):not(:hover) {
+      border: none;
+    }
+  }
+
+  &-scrollable {
+    @extend .w-100, .h-100;
+
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;  /* Safari and Chrome */
+    }
+
+    .nav-item {
+      @extend .mb-0;
+    }
+
+    .nav-link {
+      @extend .h-100;
+
+      box-sizing: border-box;
+      white-space: nowrap;
+    }
+  }
+}

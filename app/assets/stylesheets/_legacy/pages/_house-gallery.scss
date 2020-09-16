@@ -1,0 +1,50 @@
+div.house-gallery-carousel {
+  width: 100%;
+  margin-top: 65px;
+}
+
+div.house-gallery-carousel div.carousel-cell {
+  width: 250px;
+  height: 380px;
+  margin: 0 10px;
+}
+
+div.house-gallery-carousel div.carousel-cell div.cell-room-img {
+  height: 370px;
+  border-radius: 10px;
+  position: relative;
+  transition: $ease;
+}
+
+div.house-gallery-carousel div.carousel-cell div.cell-room-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(transparent 0%, black 100%);
+  opacity: 0.3;
+  border-radius: inherit;
+}
+
+div.house-gallery-carousel div.carousel-cell:hover div.cell-room-img {
+  box-shadow: $insta-shadow;
+}
+
+div.house-gallery-carousel div.carousel-cell div.cell-room-img h3 {
+  position: absolute;
+  color: white;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+div.house-gallery-carousel div.carousel-cell div.cell-room-img h3 span {
+  color: $peach;
+  font-weight: 100;
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: 0.5px;
+}

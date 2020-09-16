@@ -2,14 +2,19 @@
   <% component.with(:background) do %>
     <%= render Components::SliderComponent.new id: 'banner-slider', options: { class: 'banner-slider' }, data: { draggable: true } do |component| %>
       <%= component.with(:slides) do %>
+        <% if false %>
+          <%= render Views::Shared::VirtualTourComponent.new(
+                   record: @colocation,
+                   options: { class: 'banner-layer' },
+                   data: { target: 'slider.slide slider.virtualTour' }) %>
+        <% end %>
 
-        <% #@colocation.showcase.each do |image| %>
+        <% ["01.jpg", "02.jpeg"].each do |image| %>
           <div data-target="slider.slide" class="banner-layer">
             <div class="banner-overlay"></div>
-            <%= image_tag 'logo.png', class: 'banner-layer' %>
+            <%= image_tag "apartments/#{image}", class: 'banner-layer' %>
           </div>
-        <% #end %>
-
+        <% end %>
       <% end %>
 
       <%= render Bootstrap::Text::LinkComponent.new(
@@ -23,7 +28,22 @@
                  data: { action: 'click->slider#prev', target: 'slider.prev' }) do %>
         <%= inline_svg 'icons/prev.svg' %>
       <% end %>
+
+      <nav class="banner-slider-nav">
+        <div class="btn-toolbar">
+          <%= link_to('#',
+                      class: 'btn btn-toolbar-btn btn-black border-0',
+                      data: { action: 'click->slider#goTo', slide_target: 0 }) do %>
+            <%= inline_svg 'linear-black/photos.svg', class: 'icon-white' %>
+            <span class="d-none d-md-block">
+              <%= 'Photos' %>
+              <span class="small ml-1">
+                (<%= 2 %>)
+              </span>
+            </span>
+          <% end %>
+        </div>
+      </nav>
     <% end %>
   <% end %>
 <% end %>
-

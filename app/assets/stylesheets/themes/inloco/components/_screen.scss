@@ -1,0 +1,115 @@
+.screen {
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-down(md) {
+    height: auto;
+    min-height: unset;
+    padding: 100px 0;
+  }
+
+  &-lg {
+    height: auto;
+    padding: 100px 0;
+  }
+
+  &-auto {
+    height: auto;
+    min-height: unset !important;
+    padding: 100px 0;
+  }
+
+  &-sm {
+    height: 80vh;
+    min-height: unset;
+  }
+
+  &-xs {
+    height: 60vh;
+    min-height: unset;
+  }
+
+  &-block {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-container {
+    @extend .container;
+
+    position: relative;
+
+    &-title {
+      @extend .display-4;
+
+      position: absolute;
+      width: $display4-size;
+      left: - ($display4-size + $spacer * 2);
+      white-space: nowrap;
+      bottom: calc(50% - 100px);
+      transform: rotate(-90deg);
+
+      &::after {
+        content: '';
+        display: inline-block;
+        height: 4px;
+        width: 40px;
+        background: $black;
+      }
+    }
+  }
+
+  &-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &-sm {
+      height: 80%;
+    }
+
+    &-gradient {
+      background: linear-gradient(45deg, rgba($black, 0.3), rgba($black, 0.8));
+    }
+  }
+
+  &-background {
+    @extend .screen-layer;
+
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    user-select: none;
+
+    &-bottom {
+      object-position: bottom;
+    }
+  }
+
+  &-content {
+    @extend .screen-layer;
+
+    z-index: 1;
+  }
+
+  &-clipped-arrow {
+    clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+  }
+
+  &-clipped-circle {
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  &-clipped-polygon {
+    @include media-breakpoint-up(md) {
+      clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    }
+  }
+}

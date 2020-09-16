@@ -1,0 +1,35 @@
+$divider-or-message: 50px;
+
+.divider {
+  @extend .my-5, .position-relative;
+}
+
+.divider-or {
+  &::after {
+    @extend .position-absolute, .bg-white;
+
+    left: calc(50% - #{$divider-or-message / 2});
+    content: 'or';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: $divider-or-message;
+    width: $divider-or-message;
+    height: $divider-or-message;
+    top: calc(#{$divider-or-message} / -2);
+    color: $text-muted;
+  }
+}
+
+.divider-sm {
+  width: 50px;
+  height: 4px;
+  border: none;
+  margin-left: 0;
+}
+
+@each $color-name, $color-code in $theme-colors {
+  .divider-#{$color-name} {
+    background: $color-code;
+  }
+}

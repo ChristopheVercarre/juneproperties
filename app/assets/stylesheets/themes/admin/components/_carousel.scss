@@ -1,0 +1,30 @@
+$carousel-control-size: 30px;
+
+.carousel {
+  &__slide {
+    img {
+      @extend %rounded-large;
+    }
+  }
+
+  &__button {
+    @extend %position-absolute, %rounded-circle, %bg-white, %border-0, %d-f, %justify-c, %align-c;
+
+    height: $carousel-control-size;
+    width: $carousel-control-size;
+
+    top: calc(50% - #{$carousel-control-size / 2});
+
+    &--next {
+      @extend .carousel__button;
+
+      right: $carousel-control-size / -2;
+    }
+
+    &--previous {
+      @extend .carousel__button;
+
+      left: $carousel-control-size / -2;
+    }
+  }
+}

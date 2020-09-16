@@ -1,0 +1,27 @@
+$avatar-base-size: 50px;
+
+.avatar {
+  @extend .rounded-circle, .img-cover;
+
+  height: $avatar-base-size;
+  user-select: none;
+  width: $avatar-base-size;
+
+  &-sm {
+    height: $avatar-base-size * .75;
+    width: $avatar-base-size * .75;
+    user-select: none;
+  }
+
+  &-lg {
+    height: $avatar-base-size * 2;
+    width: $avatar-base-size * 2;
+    user-select: none;
+  }
+
+  &-xl {
+    height: $avatar-base-size * 3;
+    width: $avatar-base-size * 3;
+    user-select: none;
+  }
+}

@@ -1,0 +1,45 @@
+.toast {
+  @extend .position-fixed, .border-0, .shadow;
+
+  min-width: 300px;
+  width: fit-content;
+  height: fit-content;
+  max-width: calc(100vw - #{$spacer * 2});
+  top: calc(#{$navbar-height} + #{$spacer});
+  right: $spacer;
+  z-index: $zindex-fixed;
+
+  &-body,
+  &-header {
+    @extend .px-4;
+  }
+
+  @include media-breakpoint-down(md) {
+    top: $spacer;
+  }
+
+  .close {
+    position: absolute;
+    right: 13px;
+    top: 7px;
+    height: 20px;
+    width: 20px;
+  }
+
+  @each $color-name, $color-code in $theme-colors {
+    &-#{$color-name} {
+      .toast-header {
+        color: color-yiq(rgba($color-code, $toast-header-background-opacity));
+        background: rgba($color-code, $toast-header-background-opacity);
+      }
+    }
+  }
+
+  &-bottom-left {
+    position: fixed;
+    left: $spacer;
+    bottom: $spacer;
+    right: unset;
+    top: unset;
+  }
+}

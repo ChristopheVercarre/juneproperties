@@ -1,0 +1,108 @@
+$mosaic-grids: (
+  'solo': 1,
+  'duo': 2,
+  'trio': 3,
+  'quartet': 4,
+  'quintet': 5,
+  'sextet': 6,
+  'septet': 7,
+  'octet': 8
+);
+
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-gap: 1.5rem;
+  height: 100%;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(200px, 1fr));
+  }
+
+  &-dark {
+    @extend .bg-black, .text-white;
+
+    * {
+      @extend .text-white;
+    }
+  }
+
+
+  @each $unit, $number in $mosaic-grids {
+    &-row-#{$unit} {
+      @include media-breakpoint-between(sm, lg) {
+        grid-template-rows: repeat(#{$number + 1}, minmax(auto, 1fr));
+      }
+
+      @include media-breakpoint-up(lg) {
+        grid-template-rows: repeat(#{$number}, minmax(auto, 1fr));
+      }
+    }
+
+    &-column-#{$unit} {
+      @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(#{$number}, minmax(0, 1fr));
+      }
+    }
+  }
+
+  &-tile {
+    @extend .py-6, .px-5;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+
+    &-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-bordered {
+      border: 3px solid $black;
+    }
+
+    @each $color-name, $color-code in $theme-colors {
+      @if lightness($color-code) > .7  {
+        &-#{$color-name} {
+          background: $color-code;
+          color: color-yiq($color-code);
+        }
+      } @else {
+        &-#{$color-name} {
+          background: $color-code;
+        }
+      }
+    }
+
+    &-light {
+      @extend .bg-light;
+    }
+
+    &-white {
+      @extend .bg-white;
+    }
+  }
+
+  &-title {
+
+  }
+
+  &-link {
+    @extend .stretched-link;
+  }
+}

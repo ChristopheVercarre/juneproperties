@@ -1,0 +1,73 @@
+$carousel-card-image-size: 150px;
+
+.carousel-card {
+  @extend %d-f, %align-fs;
+
+  &__details {
+    @extend %pr-4;
+
+    flex: 1 1 auto;
+  }
+
+  &__carousel {
+    @extend %position-relative;
+
+    width: $carousel-card-image-size;
+
+    &--desktop-only {
+      @extend .carousel-card__carousel;
+
+      @media (max-width: $md-breakpoint) {
+        display: none;
+      }
+    }
+  }
+
+  &__carousel-button--next {
+    @extend .carousel__button--next;
+  }
+
+  &__carousel-button--previous {
+    @extend .carousel__button--previous;
+  }
+
+  &__carousel-slide {
+    @extend .carousel__slide;
+
+    height: $carousel-card-image-size;
+
+    img {
+      height: $carousel-card-image-size;
+      width: $carousel-card-image-size;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    @extend %mb-3;
+  }
+
+  &__subtitle {
+    @extend %label, %mb-3, %text-gray;
+  }
+
+  &__icon-list {
+    @extend .icon-list, %l-my-1;
+
+    &-item {
+      @extend .icon-list__list-item;
+    }
+
+    &-icon {
+      @extend .icon-list__icon;
+    }
+
+    &-content {
+      @extend .icon-list__content--small;
+    }
+
+    &-button {
+      @extend %ml-4, %d-i;
+    }
+  }
+}

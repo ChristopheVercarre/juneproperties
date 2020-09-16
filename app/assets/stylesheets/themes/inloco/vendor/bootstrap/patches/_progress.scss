@@ -1,0 +1,12 @@
+.progress {
+  border: 1px solid $black;
+
+  .progress-bar + .progress-bar {
+    border-left: 1px solid $black;
+  }
+}
+
+.turbolinks-progress-bar {
+  height: 10px;
+  background-color: $primary;
+}

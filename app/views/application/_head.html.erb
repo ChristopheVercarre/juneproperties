@@ -1,0 +1,14 @@
+<head>
+  <%= render 'meta-tags' %>
+  <%= render 'favicon' %>
+
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+
+  <%= theme_stylesheet_link_tag %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}", 'data-turbolinks-eval': false %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# javascript_include_tag 'https://static.zdassets.com/ekr/snippet.js?key=38971158-c741-45a1-bb4c-bbc37ec29308', id: 'ze-snippet' %>
+</head>

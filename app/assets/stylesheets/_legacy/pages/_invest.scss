@@ -1,0 +1,230 @@
+/*Banner and nav style in components/banner.scss*/
+section#offer div.grid {
+  display: grid;
+  height: 640px;
+  padding: 30px 0;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr repeat(4, 2fr) 1fr;
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+section#offer div.grid div.offer-intro {
+  grid-area: 1/1/7/2;
+}
+
+section#offer div.grid div.offer-intro p {
+  width: 70%;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+section#offer div.grid div.offer-intro-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/*The Grid :
+ | intro |   .   | img-3 | 1fr
+ | intro | img-1 | img-3 | 2fr
+ | intro | img-1 | img-4 | 2fr
+ | intro | img-2 | img-4 | 2fr
+ | intro | img-2 | img-5 | 2fr
+ | intro |   .   | img-5 | 1fr
+    2fr     1fr     1fr
+    grid-area : row-start/column-start/row-end/column-end;
+    https://css-tricks.com/snippets/css/complete-guide-grid/
+*/
+section#offer div.grid div#offer-intro-img-1 {
+  grid-area: 2/2/4/3;
+}
+
+section#offer div.grid div#offer-intro-img-2 {
+  grid-area: 4/2/6/3;
+}
+
+section#offer div.grid div#offer-intro-img-3 {
+  grid-area: 1/3/3/4;
+}
+
+section#offer div.grid div#offer-intro-img-4 {
+  grid-area: 3/3/5/4;
+}
+
+section#offer div.grid div#offer-intro-img-5 {
+  grid-area: 5/3/7/4;
+}
+
+section#offer div.steps,
+section#values div.flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+}
+// Flex system for the steps and the values details
+
+section#offer div#step-2 div.step-img,
+section#offer div#step-4 div.step-img {
+  order: 1;
+}
+// interverting the second and fourth image with the details
+
+section#offer div.steps div.step-img {
+  display: block;
+  width: 40%;
+  height: auto;
+  min-height: 100%;
+}
+
+section#offer div.steps div.step-details {
+  display: block;
+  width: 60%;
+  padding: 40px 105px;
+}
+
+section#offer div.steps div.step-details h3 {
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+section#offer div.steps div.step-details h3 span {
+  display: block;
+  color: $invest;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+section#offer a.button {
+  margin-top: 65px;
+}
+
+section#values p#mission {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+section#values div.flex div {
+  display: block;
+  width: 30%;
+  text-align: center;
+}
+
+section#values div.values-detail i {
+  font-size: 30px;
+  color: $invest;
+}
+
+section#partners div.flex {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto;
+  flex-wrap: wrap;
+}
+
+section#partners div.flex div.partner-logo {
+  width: 180px;
+  height: 150px;
+}
+
+section#partners div.flex div.partner-details {
+  width: 60%;
+}
+@media only screen and (max-width: 768px) {
+  section#offer div.grid {
+    height: auto;
+  }
+
+  section#offer div.grid h2 {
+    font-size: 30px;
+  }
+
+  section#offer div.steps,
+  section#values div.flex {
+    flex-direction: column;
+  }
+
+  section#offer div.grid div.offer-intro p,
+  section#offer div.steps div.step-details,
+  section#values div.flex div {
+    width: 100%;
+    padding: 0;
+  }
+
+  section#offer div.steps div.step-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  section#offer div#step-2 div.step-img,
+  section#offer div#step-4 div.step-img {
+    order: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  section#offer div.grid {
+    display: block;
+    height: auto;
+  }
+
+  section#offer div.grid div.offer-intro-img {
+    display: none;
+  }
+  // hide the img grid
+
+  section#partners div.flex div.partner-details {
+    width: 100%;
+  }
+}
+/* Instagram gallery */
+/* Filters button */
+section#life {
+  padding-bottom: 65px;
+}
+
+section#life div.container ul.pictures__filter_tags {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 14px;
+  font-weight: 100;
+  color: $light-grey;
+}
+
+section#life div.container ul li.pictures__filter_tags__item {
+  display: inline-block;
+  margin: 0 5.5px 10px;
+}
+
+section#life div.container button.button {
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+section#life div.container button.button--gray {
+  color: $light-grey;
+}
+
+section#life div.container button.button--blue {
+  color: $invest;
+}
+
+section#life div.container button:active,
+section#life div.container button:focus,
+section#life div.container button:hover,
+section#life div.container button:visited {
+  color: $invest;
+}
+
+section#life div.container div.filtr-container {
+  position: inherit !important;
+  margin: 0 auto;
+  max-width: 860px;
+}
+
+section#life div.container div.instacard {
+  margin: 15px;
+}

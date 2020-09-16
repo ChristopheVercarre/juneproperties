@@ -1,0 +1,222 @@
+/*Filters*/
+section.actions{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.actions-filter-inputs{
+  display: flex;
+}
+.actions-filter-inputs label{
+  display: flex;
+  align-items: center;
+  width: 100px;
+  margin-right: 20px;
+  color: $sec-admin;
+  font-size: 16px;
+}
+.actions-filter-inputs label.actions-filter-input-search{
+  width: 200px;
+  margin-left:30px;
+}
+.actions-filter-inputs input{
+  width:90%;
+  border:none;
+  color: $sec-admin;
+  font-size: 14px;
+  transition: $ease;
+  border-bottom: 1px solid white;
+}
+.actions-filter-inputs input:focus{
+  outline: none;
+  border-bottom: 1px solid $sec-admin;
+}
+.actions-filter-inputs label.actions-filter-input-search input{
+  margin-left: 10px;
+}
+.actions-filter-inputs input::placeholder{
+  color: $sec-admin;
+}
+.actions-filter-inputs label.actions-filter-input-search,
+.actions-filter-inputs label.actions-filter-input-search input::placeholder{
+ color: $dGrey-admin;
+}
+/*Action buttons*/
+.actions-buttons .button,
+.actions-buttons .button.select{
+  min-width: 130px;
+  padding: 10px 0;
+  display: inline-block;
+  text-align: center;
+}
+.actions-buttons .button.select{
+  padding: 7.5px 0;
+}
+.actions-buttons .button.select select{
+  color: $sec-admin;
+  border: none;
+  background: none;
+  font-size:14px;
+}
+.actions-buttons .button.select select:focus{
+  outline: none;
+}
+.actions-buttons .button.select select:hover{
+  cursor: pointer;
+}
+/* ============= Payments tables ============= */
+section.payments{
+  margin-top: 64px;
+}
+section.payments table{
+  width: 100%;
+}
+section.payments table tbody tr:nth-child(4n+1){
+  background: rgba(173, 176, 196,.1);
+}
+section.payments table th,
+section.payments table td{
+  padding-top:20px;
+  padding-bottom:20px;
+  text-align: center;
+}
+section.payments table th{
+  color: $dGrey-admin;
+  font-size: 14px;
+}
+section.payments table th:first-child,
+section.payments table td:first-child{
+  padding-left: 20px;
+  text-align: left;
+}
+section.payments table th.payments-table-coloc,
+section.payments table td.payments-table-coloc{
+  text-align: left;
+}
+section.payments table th.payments-table-rent,
+section.payments table td.payments-table-rent{
+  text-align: right;
+}
+section.payments table th:last-child,
+section.payments table td:last-child{
+  vertical-align: middle;
+  padding-right: 20px;
+  text-align: right;
+}
+section.payments table th.payments-table-colocation select{
+  border: none;
+  background: white;
+  color: $dGrey-admin;
+  font-size: 14px;
+}
+section.payments table p,
+section.payments table a{
+  color: $sec-admin;
+  font-size:16px;
+  font-weight: bold;
+}
+section.payments table span{
+  display: block;
+  margin-top:5px;
+  font-size:12px;
+  color: $dGrey-admin;
+}
+section.payments table span.payments-table-date-due-date{
+  text-transform: uppercase;
+  font-size: 8px;
+}
+section.payments table span.payments-table-date-due-date time{
+  font-size: 12px;
+}
+section.payments table span.payments-table-rent-status{
+  color: $sec-admin;
+  font-weight: bold;
+}
+section.payments table span.payments-table-rent-status.red{
+  color: $red-admin;
+}
+section.payments table span.payments-table-rent-status.green{
+  color: $green-admin;
+}
+section.payments table span.payments-table-rent-status.redbox{
+  padding: 2px 10px;
+  width: 75px;
+  float: right;
+  border-radius: 4px;
+  color: white;
+  background: $red-admin;
+}
+section.payments table .payments-table-edit{
+  color: $lGrey-admin;
+  font-size:20px;
+}
+section.payments table .payments-table-edit i:hover{
+  color: $pri-admin;
+  cursor: pointer;
+}
+/* Edit rent panels */
+tr.edit-rent{
+  display: none;
+}
+.edit-rent.active{
+  display: table-row;
+}
+tr.edit-rent label{
+  color: $sec-admin;
+  font-size: 14px;
+}
+tr.edit-rent input[type='number']{
+  width:50px;
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: $sec-admin;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background: rgba(173, 176, 196,.1);
+}
+tr.edit-rent .edit-rent-charges-options{
+  display: block;
+  margin: 5px;
+  font-size: 12px;
+}
+tr.edit-rent .edit-rent-save{
+  vertical-align: middle;
+}
+tr.edit-rent .edit-rent-save .button{
+    color: white;
+    padding: 7px 25px;
+    display: block;
+    font-weight: 100;
+    margin: 0 0 24px auto;
+}
+tr.edit-rent .edit-rent-save .button:hover{
+  color: $pri-admin;
+}
+
+/* Pagination */
+.payments nav.pagination{
+  text-align: center;
+  font-size: 14px;
+}
+.payments nav.pagination .page{
+  padding: 5px;
+}
+.payments nav.pagination .next,
+.payments nav.pagination .prev{
+  padding: 7px;
+}
+.payments nav.pagination a,
+.payments nav.pagination .page.gap{
+  color: $dGrey-admin;
+}
+.payments nav.pagination a:hover{
+  color: $pri-admin;
+}
+.payments nav.pagination .current{
+  color: $pri-admin;
+}

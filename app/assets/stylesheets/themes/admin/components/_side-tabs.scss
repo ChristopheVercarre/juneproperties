@@ -1,0 +1,19 @@
+.side-tabs {
+  @extend %h-100, %w-100, %d-f, %flex-c, %justify-c, %align-s;
+
+  &__tab {
+    @extend %position-relative;
+
+    &.active::after {
+      @extend %position-absolute, %t-0, %r-0, %h-100;
+
+      background: $black;
+      content: '';
+      width: 3px;
+    }
+
+    &-link {
+      @extend %d-f, %justify-c, %align-c, %py-4, %label-small, %text-black;
+    }
+  }
+}

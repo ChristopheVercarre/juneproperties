@@ -1,0 +1,39 @@
+.avatar {
+  @extend %rounded-circle;
+
+  height: $avatar-size;
+  width: $avatar-size;
+
+  &--large {
+    @extend %rounded-circle;
+
+    height: $avatar-size-lg;
+    width: $avatar-size-lg;
+  }
+
+  &--small {
+    @extend %rounded-circle;
+
+    height: $avatar-size-sm;
+    width: $avatar-size-sm;
+  }
+
+  &--small--with-logo {
+
+  }
+}
+
+.avatar--with-badge {
+  @extend %position-relative;
+
+  .avatar__image {
+    @extend .avatar;
+  }
+
+  .avatar__badge {
+    @extend %position-absolute, %b-0;
+
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,292 @@
+/* external css: flickity.css */
+* {
+  box-sizing: border-box;
+}
+
+.flickity-prev-next-button {
+  border-radius: 4px !important;
+  transition: all 0.3s ease-in-out;
+}
+
+div.main-carousel {
+  margin-top: 65px;
+}
+
+div.main-carousel a.card-link-text {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+div.main-carousel div.carousel-cell {
+  width: 340px;
+  margin-right: 10px;
+  counter-increment: carousel-cell;
+}
+
+div.main-carousel div.carousel-cell div.cell-room-img {
+  display: block;
+  height: 350px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: $insta-shadow;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-cell {
+  position: relative;
+
+  &:hover .cell-room-favorite {
+    opacity: 1;
+  }
+}
+
+.cell-room-favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+
+  &:not(.favorited) {
+    opacity: 0;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  path {
+    transition: all .2s ease-in-out;
+  }
+
+  &:not(.favorited):not(:hover) {
+    [name="fill"] {
+      opacity: 0;
+    }
+
+    [name="outline"] {
+      fill: white;
+    }
+  }
+}
+
+div.main-carousel div.carousel-cell.available-now {
+  position: relative;
+}
+
+html[lang='en'] {
+  div.carousel-cell.available-now {
+    div.cell-room-img::before {
+      content: 'available now';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 5px 15px;
+      color: #fff;
+      background: rgba(252, 129, 82, .7);
+      font-size: 10px;
+      font-weight: 100;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+}
+
+html[lang='fr'] {
+  div.carousel-cell.available-now {
+    div.cell-room-img::before {
+      content: 'disponible maintenant';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 5px 15px;
+      color: #fff;
+      background: rgba(252, 129, 82, .7);
+      font-size: 10px;
+      font-weight: 100;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+}
+
+html[lang='nl'] {
+  div.carousel-cell.available-now {
+    div.cell-room-img::before {
+      content: 'nu beschikbaar';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 5px 15px;
+      color: #fff;
+      background: rgba(252, 129, 82, .7);
+      font-size: 10px;
+      font-weight: 100;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+}
+
+div.main-carousel div.carousel-cell:hover div.cell-room-img {
+  box-shadow: 0 0 0 white;
+}
+
+div.main-carousel div.carousel-cell div.cell-room-details {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 20px 1fr 30px;
+}
+
+div.main-carousel div.carousel-cell div.cell-room-details p.cell-room-details-city {
+  color: $peach;
+  font-size: 12px;
+  margin: 0;
+  grid-area: 1/1/2/3;
+  align-self: end;
+}
+
+div.main-carousel div.carousel-cell div.cell-room-details h3 {
+  padding: 0;
+  color: black;
+  width: 100%;
+}
+
+div.main-carousel div.carousel-cell div.cell-room-details h3.cell-room-details-price {
+  justify-self: center;
+  text-align: center;
+}
+
+div.main-carousel div.carousel-cell div.cell-room-details p#perMonth {
+  grid-area: 3/2/4/3;
+  font-size: 12px;
+  font-weight: 300;
+  color: $light-grey;
+  text-align: center;
+}
+
+div.main-carousel div.carousel-cell div.cell-room-details p.cell-room-details-availability {
+  font-size: 12px;
+  font-weight: 300;
+  color: $light-grey;
+}
+
+div.house-carousel {
+  width: 465px;
+  height: 465px;
+}
+
+div.house-carousel .flickity-page-dots {
+  display: block !important;
+  max-height: 16px;
+  overflow: hidden;
+}
+
+div.house-carousel .flickity-prev-next-button {
+  display: none;
+}
+
+div.house-carousel div.carousel-cell {
+  width: 465px;
+  height: 465px;
+}
+
+div.house-carousel div.carousel-cell div.cell-room-img {
+  height: 465px;
+  border-radius: 10px;
+}
+
+.instacard-grid {
+  display: grid;
+  margin: 20px 0;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+  padding: 20px 0;
+}
+// Grid Instagram
+
+.instacard {
+  width: 250px;
+  height: 270px;
+  border-radius: 4px;
+  box-shadow: $insta-shadow;
+  transition: all 0.3s ease-in-out;
+}
+
+.instacard-picture {
+  width: 250px;
+  height: 270px;
+  border-radius: 4px;
+  box-shadow: $insta-shadow;
+  transition: all 0.3s ease-in-out;
+}
+
+.instacard-picture ul {
+  content: '';
+  border-radius: inherit;
+  display: block;
+  text-align: center;
+  height: 100%;
+  background: rgba(0,0,0,.3);
+  line-height: 270px;
+  opacity: 0;
+  color: white;
+  font-weight: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+.instacard-picture ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.instacard-picture ul li i {
+  margin-right: 5px;
+  font-weight: 700;
+}
+
+.instacard-picture:hover {
+  box-shadow: none;
+}
+
+.instacard-picture:hover ul {
+  opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+  .instacard-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  div.house-carousel,
+  div.house-carousel div.carousel-cell,
+  div.house-carousel div.carousel-cell div.cell-room-img {
+    width: 40vw;
+    height: 40vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  div.main-carousel div.carousel-cell {
+    width: 300px;
+  }
+
+  main.room-index div.carousel-cell {
+    width: 100%;
+  }
+
+  div.house-carousel,
+  div.house-carousel div.carousel-cell,
+  div.house-carousel div.carousel-cell div.cell-room-img {
+    width: 90vw;
+    height: 90vw;
+  }
+}

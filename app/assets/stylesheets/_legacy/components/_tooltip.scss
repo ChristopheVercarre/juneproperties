@@ -1,0 +1,14 @@
+.tooltip {
+  background: $text;
+  color: $dark-white;
+  font-size: 13px;
+  padding: .25rem .5rem;
+  border-radius: 4px;
+  margin-bottom: .25rem;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+
+  &[aria-hidden="false"] {
+    opacity: 1;
+  }
+}

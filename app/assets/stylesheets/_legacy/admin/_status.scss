@@ -1,0 +1,42 @@
+$pending-color: #FF9900;
+$refused-color: #FF0000;
+$active-color: #08A510;
+$terminated-color: $blue;
+
+.status_tag {
+  &.applied {
+    background: $pending-color;
+  }
+
+  &.awaiting_signature {
+    background: $pending-color;
+  }
+
+  &.awaiting_deposit {
+    background: $pending-color;
+  }
+
+  &.refused {
+    background: $refused-color;
+  }
+
+  &.active {
+    background: $active-color;
+  }
+
+  &.notice_of_termination_received {
+    background: $terminated-color;
+  }
+
+  &.terminated {
+    background: $terminated-color;
+  }
+
+  &.paid {
+    background: $active-color;
+  }
+
+  &.pay {
+    background: $terminated-color;
+  }
+}

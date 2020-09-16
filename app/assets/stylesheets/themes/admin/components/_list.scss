@@ -1,0 +1,15 @@
+.list {
+  &--inline {
+    @extend %d-f, %align-c;
+  }
+
+  &--bulleted {
+    @extend %text-l, %ml-5, %mb-4;
+
+    list-style: disc;
+  }
+
+  &__item {
+    @extend %paragraph-small, %mb-2;
+  }
+}

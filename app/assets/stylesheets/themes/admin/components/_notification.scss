@@ -1,0 +1,165 @@
+.notification {
+  display: block;
+  position: relative;
+  padding: .75rem 0;
+  margin: .5rem 0;
+  border-bottom: 1px solid #f7f7f7;
+
+  // modifiers
+  &:first-child {
+    margin-top: 1rem;
+  }
+
+  &:last-child {
+    margin-top: .75rem;
+    margin-bottom: 0;
+    padding: 0;
+    border-bottom: none;
+
+    .notification-link {
+      margin-top: 0;
+    }
+  }
+
+  &:hover {
+    .notification-close {
+      opacity: 1;
+    }
+  }
+
+  &.notification-read {
+    .notification-message,
+    .notification-link,
+    .notification-time {
+      opacity: 0.5;
+    }
+
+    .notification-close {
+      &::after {
+        background: $error;
+        transform: scale(0);
+        transition: transform .2s ease-in-out;
+      }
+
+      &::before {
+        background: #eeeeee;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        top: 0;
+      }
+
+      &:hover {
+        &::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &.notification-last {
+    .notification-link {
+      text-decoration: none;
+      color: $gray;
+      margin-bottom: 0;
+      margin-top: .5rem;
+      text-align: right;
+
+      &:hover {
+        color: $success;
+      }
+    }
+  }
+
+  // elements
+  &-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    z-index: 2;
+
+    &:hover {
+      background: #eeeeee;
+
+      &::after {
+        background: $white-dark;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    &::before {
+      height: 100%;
+      width: 100%;
+      right: 0;
+      top: 0;
+      background: #eeeeee;
+      transition: all .2s ease-in-out;
+    }
+
+    &::after {
+      height: 8px;
+      width: 8px;
+      right: 2px;
+      top: 2px;
+      background: $error;
+    }
+  }
+
+  &-content {
+    display: block;
+  }
+
+  &-time {
+    font-size: 11px;
+    font-weight: 600;
+    color: $white-dark;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  &-message {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+
+    a {
+      font-size: 16px;
+      padding: 0;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+
+  &-link {
+    color: $success;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0;
+    display: block;
+  }
+}
+
+// icon
+.icon-notifications.new-notification::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $error;
+  position: absolute;
+  right: 9px;
+  top: 1px;
+}

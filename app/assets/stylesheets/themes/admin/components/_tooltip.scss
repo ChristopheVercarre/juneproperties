@@ -1,0 +1,30 @@
+$tooltip-caret-size: 5px;
+
+.tooltip {
+  @extend %text-xs, %text-white, %bg-black, %p-1, %my-1, %rounded-small;
+
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+
+  &[aria-hidden="false"] {
+    opacity: 1;
+  }
+
+  &::after {
+    @extend %position-absolute, %bg-black;
+
+    content: '';
+    width: $tooltip-caret-size;
+    height: $tooltip-caret-size;
+    left: calc(50% - #{$tooltip-caret-size / 2});
+    transform: rotate(45deg);
+  }
+
+  &[x-placement="top"]::after {
+    bottom: 0 - ($tooltip-caret-size / 2);
+  }
+
+  &[x-placement="bottom"]::after {
+    top: 0 - ($tooltip-caret-size / 2);
+  }
+}

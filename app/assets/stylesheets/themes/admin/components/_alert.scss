@@ -1,0 +1,29 @@
+.alert {
+  @extend %position-absolute, %t-0, %r-0, %m-4, %l-p-1, %rounded-small, %shadow, %bg-white;
+
+  min-width: 300px;
+  z-index: 1000;
+
+  .close {
+    @extend %position-absolute, %bg-transparent, %border-0, %t-0, %r-0, %p-3;
+
+    span {
+      height: .75rem;
+      width: .75rem;
+    }
+  }
+
+  &::before {
+    @extend %position-absolute, %l-0, %t-0, %h-100;
+
+    border-radius: ($base-radius / 2) 0 0 ($base-radius / 2);
+    content: '';
+    width: 5px;
+  }
+}
+
+@each $color-name, $color-code in $theme-colors {
+  .alert-#{$color-name}::before {
+    @extend %bg-#{$color-name};
+  }
+}

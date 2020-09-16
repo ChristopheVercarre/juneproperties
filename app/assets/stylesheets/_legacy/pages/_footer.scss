@@ -1,0 +1,39 @@
+.icon-sm {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+footer span.copyright {
+  grid-column: 2;
+  font-size: 12px;
+}
+
+.remove-focus:focus {
+  box-shadow: none !important;
+}
+
+svg {
+  fill: white !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .address, .social-icon {
+    text-align: center;
+  }
+
+  .header-logo >img  {
+    height: 50px !important;
+  }
+
+  header > div {
+    font-size: 12px !important;
+  }
+}

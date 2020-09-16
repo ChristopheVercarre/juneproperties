@@ -1,0 +1,38 @@
+.badge {
+  @extend %label-small, %px-2, %py-1, %rounded-small, %text-c, %d-ib;
+
+  @each $color-name, $color-code in $theme-colors {
+    &--#{$color-name} {
+      @if ($color-name == 'warning') {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-black, .badge;
+      } @else {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-white, .badge;
+      }
+    }
+  }
+
+  @each $color-name, $color-code in $theme-colors {
+    &--transparent-#{$color-name} {
+      @extend %bg-transparent, %text-#{$color-name}, %label-small, %px-1, %py-0, %rounded-small, %text-c, %d-ib;
+    }
+  }
+
+  &--contract {
+    &-active {
+      @extend .badge--success;
+    }
+
+    &-applied,
+    &-invited,
+    &-awaiting-signature,
+    &-awaiting-deposit,
+    &-notice-of-termination-received {
+      @extend .badge--warning;
+    }
+
+    &-cancelled,
+    &-terminated {
+      @extend .badge--error;
+    }
+  }
+}

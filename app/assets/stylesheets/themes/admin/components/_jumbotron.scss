@@ -1,0 +1,48 @@
+$large-radius-on-top: ($base-radius * 2) ($base-radius * 2) 0 0;
+
+.jumbotron {
+  @extend %rounded, %border-2-white-dark, %h-100, %text-small;
+
+  &--scrollable {
+    @extend .jumbotron;
+
+    .jumbotron__body {
+      max-height: 100%;
+      overflow-y: scroll;
+    }
+  }
+
+  &__header {
+    @extend %bg-white-dark;
+
+    border-radius: $large-radius-on-top;
+  }
+
+  &__body {
+    @extend %p-5;
+  }
+
+  &__tabs {
+    @extend %d-f;
+  }
+
+  &__tab {
+    @extend %px-5, %py-3, %label-small, %text-gray;
+
+    border-radius: $large-radius-on-top;
+
+    &.active {
+      @extend  %px-5, %py-3, %label-small, %text-black, %bg-white;
+
+      border-radius: $large-radius-on-top;
+    }
+  }
+
+  &__tab-content {
+    @extend %d-n;
+
+    &.show {
+      @extend %d-f;
+    }
+  }
+}

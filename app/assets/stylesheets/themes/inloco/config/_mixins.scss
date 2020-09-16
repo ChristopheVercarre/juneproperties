@@ -1,0 +1,21 @@
+.with-notification {
+  position: relative;
+
+  &::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    top: $spacer;
+    right: $spacer;
+    height: 8px;
+    width: 8px;
+    background: $danger;
+  }
+
+  &-sm {
+    &::after {
+      top: 2px;
+      right: 2px;
+    }
+  }
+}

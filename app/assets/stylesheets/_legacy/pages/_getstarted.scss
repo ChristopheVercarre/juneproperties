@@ -1,0 +1,45 @@
+/* use login.scss */
+main.getstarted {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+div.banner-getstarted {
+  width: 100%;
+  height: 100vh;
+}
+
+section.getstarted-form {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin: auto;
+}
+
+section.getstarted-form h1 {
+  color: #fff;
+  font-weight: 100;
+  width: 56%;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+@media only screen and (max-width: 768px) {
+  main.getstarted {
+    display: block;
+  }
+
+  div.getstarted-form {
+    margin: 30px auto;
+    width: 90%;
+  }
+
+  section.getstarted-form h1 {
+    width: 90%;
+  }
+}

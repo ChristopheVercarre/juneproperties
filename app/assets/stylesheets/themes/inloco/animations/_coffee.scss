@@ -1,0 +1,30 @@
+@keyframes coffee {
+  0% {
+    background-image: asset-url('animated/coffee/1.png');
+  }
+  50% {
+    background-image: asset-url('animated/coffee/1.png');
+  }
+  51% {
+    background-image: asset-url('animated/coffee/2.png');
+  }
+  99% {
+    background-image: asset-url('animated/coffee/2.png');
+  }
+  100% {
+    background-image: asset-url('animated/coffee/1.png');
+  }
+}
+
+.animate-with-coffee {
+  background-size: cover;
+  background-position: center;
+  animation-name: coffee;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  // animation-direction: forwards;
+  animation-fill-mode: forwards;
+  // animation-play-state: ;
+}

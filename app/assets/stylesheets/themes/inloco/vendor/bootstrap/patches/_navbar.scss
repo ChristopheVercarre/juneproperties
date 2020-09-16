@@ -1,0 +1,156 @@
+$navbar-height: 80px;
+$navbar-brand-width: 75px;
+
+.navbar {
+  @extend .shadow-sm;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  height: $navbar-height;
+  font-size: 14px;
+
+  &-fixed {
+    position: fixed;
+    z-index: 10;
+  }
+
+  &-absolute {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+  }
+
+  &-transparent {
+    box-shadow: none !important;
+  }
+
+
+  &-transparent-white {
+    // background: linear-gradient(
+    //   to bottom,
+    //   rgba($white, 1) 0%,
+    //   rgba($white, 1) 0%,
+    //   rgba($white, 0) 100%
+    // );
+    background: rgba($white, 0.6);
+    box-shadow: none !important;
+
+    .nav-item {
+      &::after {
+        background: $black !important;
+      }
+    }
+  }
+
+  &-collapse {
+    @include media-breakpoint-down(lg) {
+      position: fixed;
+      height: calc(100vw - #{$navbar-height});
+      width: 100vw;
+      top: $navbar-height;
+      left: 0;
+      background: $body-bg;
+      z-index: 10;
+      box-shadow: $box-shadow-lg;
+    }
+    // flex: 0 0 auto;
+    // height: 100%;
+  }
+
+  &-toggler {
+    @extend .px-1;
+
+    border: none;
+    width: $navbar-brand-width;
+    text-align: center;
+  }
+
+  &-brand {
+    padding-right: $spacer;
+    padding-left: $spacer;
+    display: block;
+
+    svg {
+      width: $navbar-brand-width;
+      height: $navbar-brand-width;
+
+      @include media-breakpoint-down(md) {
+        width: $navbar-brand-width;
+        height: 30px;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      padding: 0 ;
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+
+    &-pill {
+      @extend .rounded-xl, .shadow;
+
+      background-color: white;
+      height: 46px;
+    }
+
+    .nav-item {
+      position: relative;
+
+      @include media-breakpoint-up(lg) {
+        align-items: center;
+        height: 100%;
+      }
+
+      @include media-breakpoint-down(lg) {
+        text-align: left;
+      }
+
+      &::after {
+        @extend .position-absolute, .w-100;
+
+        background: $body-color;
+        bottom: 0;
+        height: $border-width * 2;
+        left: 0;
+        opacity: 0;
+        content: '';
+      }
+
+
+      &:hover,
+      &[aria-expanded="true"],
+      .active {
+        &::after {
+          opacity: 1;
+        }
+
+        svg {
+          * {
+            fill: $primary;
+          }
+        }
+      }
+
+      .nav-link,
+      a {
+        @extend .px-3, .label, .label-sm;
+
+        display: flex;
+        align-items: center;
+        height: 100%;
+        text-decoration: none;
+      }
+    }
+  }
+}

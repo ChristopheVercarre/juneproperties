@@ -1,0 +1,100 @@
+.icon {
+  height: $spacer * 4;
+  width: $spacer * 4;
+  object-fit: contain;
+  object-position: center;
+
+  &-h1 {
+    height: $h1-font-size;
+    width: $h1-font-size;
+  }
+
+  &-rounded {
+    @extend .rounded, .border, .d-block, .p-3, .h-auto, .w-auto;
+
+    &:hover {
+      background: rgba($gray-600, 0.16);
+    }
+
+    svg,
+    &:hover svg {
+      @extend .d-block;
+
+      height: $spacer * 2;
+      width: $spacer * 2;
+      object-fit: contain;
+      object-position: center;
+
+      path {
+        fill: $gray-600;
+      }
+    }
+  }
+
+
+  &-display {
+    width: 200px;
+    object-fit: contain;
+  }
+
+  &-xl {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  &-lg {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  &-md {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+
+  &-sm {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &-xs {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  &-full {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &-transparent {
+    opacity: 0.9;
+  }
+}
+
+@each $color-name, $color-code in $theme-colors {
+  .icon-bg-#{$color-name} {
+    @extend .border-#{$color-name};
+
+    background: rgba($color-code, 0.2);
+
+    svg path,
+    &:hover svg path {
+      fill: $color-code;
+    }
+  }
+
+  .icon-#{$color-name} {
+    * {
+      fill: $color-code;
+      stroke: $color-code;
+      stroke-width: 0px;
+    }
+  }
+}

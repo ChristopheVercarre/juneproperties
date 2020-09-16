@@ -1,0 +1,79 @@
+aside.admin-nav {
+  position: fixed;
+  z-index: 99;
+  width: 80px;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255,255,255,.95);
+  box-shadow: $shadow;
+  transition: $ease;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+aside.admin-nav .admin-nav-logo{
+  width:100%;
+  height: 30px;
+  display: block;
+  background-size: cover;
+}
+aside.admin-nav ul {
+  margin: 0 auto;
+  width: 30px;
+  transition: $ease;
+  display: flex;
+  flex-direction: column;
+}
+aside.admin-nav ul li {
+  width: 150px;
+  margin-left: 7px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+aside.admin-nav ul li a i.admin-nav-list-item-icon {
+  font-size: 16px;
+  vertical-align: middle;
+}
+aside.admin-nav ul li a span {
+  opacity: 0;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+// Hover system
+aside.admin-nav:hover {
+  width: 255px;
+}
+aside.admin-nav:hover ul {
+  width: 150px;
+}
+aside.admin-nav:hover ul li a span {
+  opacity: 1;
+}
+aside.admin-nav:hover ul li {
+  text-align: left;
+}
+aside.admin-nav .admin-nav-notification,
+aside.admin-nav .admin-nav-log_out{
+  text-align: center;
+}
+aside.admin-nav .admin-nav-log_out{
+  font-size: 14px;
+}
+aside.admin-nav .admin-nav-notification .admin-nav-notification-icon{
+  position: relative;
+  font-size: 20px;
+  color: $sec-admin;
+}
+aside.admin-nav .admin-nav-notification.new .admin-nav-notification-icon::after{
+  content:'';
+  position: absolute;
+  top:3px;
+  right:3px;
+  width: 7px;
+  height: 7px;
+  display: block;
+  background: rgb(241,91,121);
+  background: radial-gradient(circle, rgba(241,91,121,1) 20%, rgba(255,255,255,0) 100%);
+}

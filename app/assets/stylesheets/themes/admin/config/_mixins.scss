@@ -1,0 +1,7 @@
+@mixin max-lines-of-text($number, $line-height: 1, $font-size: 16px) {
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  height: $number * $line-height * $font-size;
+}

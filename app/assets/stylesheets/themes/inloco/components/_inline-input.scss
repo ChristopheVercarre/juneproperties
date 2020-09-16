@@ -1,0 +1,25 @@
+.inline-input {
+  background-color: transparent !important;
+  box-shadow: none;
+  border: none;
+  line-height: inherit;
+  height: auto;
+  width: auto;
+  cursor: pointer;
+  box-sizing: content-box;
+  font-size: inherit;
+  padding: 0;
+
+  &::placeholder {
+    @extend .text-black;
+  }
+
+  &:focus,
+  &.is-valid {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-image: unset !important;
+    padding: 0 !important;
+  }
+}

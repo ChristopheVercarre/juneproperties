@@ -1,0 +1,76 @@
+$marker-width: 140px;
+$marker-popover-width: 350px;
+
+.marker {
+  @extend .px-2, .py-1, .shadow, .rounded-sm, .position-relative;
+
+  background: $white;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  font-family: $text-font;
+  z-index: 1;
+  text-decoration: none;
+  display: block;
+  transition: all 0.1s ease-in-out;
+
+  &:not(.marker-poi) {
+    border: 2px solid $black;
+  }
+
+  &-poi.marker {
+    @extend .p-0, .d-flex, .justify-content-center, .align-items-center, .rounded-circle;
+
+    height: 40px;
+    width: 40px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+      object-fit: contain;
+    }
+
+    &.active,
+    &.active:hover,
+    &:hover {
+      z-index: 1000;
+      background: $white;
+      border: 2px solid $primary;
+      transform: none;
+    }
+
+    .marker-popover {
+      background: $white;
+      position: absolute;
+      color: $black;
+    }
+  }
+
+  &.active,
+  &.active:hover,
+  &:hover {
+    background: $primary;
+    text-decoration: none;
+    color: $white;
+    transform: scale(1.05);
+  }
+
+  &:hover {
+    .marker-popover,
+    & ~ .marker-popover {
+      visibility: visible;
+    }
+  }
+
+  &-popover {
+    @extend .bg-white, .rounded;
+
+    width: $marker-popover-width;
+    position: absolute;
+    left: ($marker-width / 2) - ($marker-popover-width / 2);
+
+    bottom: calc(100% + #{$spacer});
+    visibility: hidden;
+  }
+}

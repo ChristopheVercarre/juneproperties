@@ -1,0 +1,95 @@
+.layer {
+  @include size(100%, 100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &-relative {
+    @extend .layer;
+
+    position: relative;
+  }
+
+  &-background {
+    @extend .layer;
+
+    z-index: 0;
+  }
+
+  &-overlay {
+    @extend .layer;
+
+    z-index: 2;
+  }
+
+  &-overlay-relative {
+    @extend .layer-relative;
+
+    z-index: 2;
+  }
+
+  &-img {
+    @extend .layer;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &-gradient-dark {
+    @extend .layer;
+
+    background: rgba($black, .1);
+    color: $white;
+    z-index: 1;
+  }
+
+  &-gradient-light {
+    @extend .layer;
+
+    background: rgba($white, .7);
+    color: $black;
+    z-index: 1;
+  }
+
+  &-checkbox {
+    @extend .layer;
+
+    z-index: 3;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &-corner {
+    position: absolute;
+    top: $spacer / 2;
+    right: $spacer / 2;
+  }
+
+  &-corner-bottom {
+    position: absolute;
+    bottom: 0;
+    margin: $spacer / 2;
+    right: 0;
+    z-index: 1;
+  }
+
+  &-corner-bottom-left {
+    position: absolute;
+    bottom: 0;
+    margin: $spacer / 2;
+    left: 0;
+    z-index: 1;
+  }
+
+  &-responsive-square {
+    position: relative;
+    padding: 0;
+
+    &::after {
+      content: '';
+      padding-bottom: 100%;
+      display: block;
+    }
+  }
+}
