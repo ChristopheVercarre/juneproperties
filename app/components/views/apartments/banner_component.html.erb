@@ -1,0 +1,29 @@
+<%= render Components::BannerComponent.new id: 'banner' do |component| %>
+  <% component.with(:background) do %>
+    <%= render Components::SliderComponent.new id: 'banner-slider', options: { class: 'banner-slider' }, data: { draggable: true } do |component| %>
+      <%= component.with(:slides) do %>
+
+        <% #@colocation.showcase.each do |image| %>
+          <div data-target="slider.slide" class="banner-layer">
+            <div class="banner-overlay"></div>
+            <%= image_tag 'logo.png', class: 'banner-layer' %>
+          </div>
+        <% #end %>
+
+      <% end %>
+
+      <%= render Bootstrap::Text::LinkComponent.new(
+                 options: { class: 'banner-slider-next d-none d-md-flex' },
+                 data: { action: 'click->slider#next', target: 'slider.next' }) do %>
+        <%= inline_svg 'icons/next.svg' %>
+      <% end %>
+
+      <%= render Bootstrap::Text::LinkComponent.new(
+                 options: { class: 'banner-slider-prev d-none d-md-flex' },
+                 data: { action: 'click->slider#prev', target: 'slider.prev' }) do %>
+        <%= inline_svg 'icons/prev.svg' %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+

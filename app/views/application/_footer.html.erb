@@ -1,19 +1,17 @@
 <footer class="wrapper bg-dark text-white pt-10">
   <section class="container">
     <div class="row d-flex">
-      <div class="col-8">
+      <div class="col-md-8 col-sm-12 logo-wrapper">
         <div class="mb-4">
           <%= link_to root_path do %>
-            <%= image_tag 'transparent.png', height:"150px" %>
+            <%= image_tag 'logo.png', height:"100px" %>
           <% end %>
         </div>
 
         <div class="pl-4">
-          <div class="col-6 pl-0 mb-3">
+          <div class="col-md-6 col-sm-6 pl-0 mb-3">
             <form>
-              <div class="input-group">
-                <%= text_field_tag 'email', '', class: 'form-control required email border-white bg-transparent text-white border-top-0 border-left-0 border-right-0 rounded-0' %>
-              </div>
+              <%= text_field_tag 'email', '', class: 'form-control required email border-white bg-transparent text-white border-top-0 remove-focus border-left-0 border-right-0 rounded-0' %>
             </form>
           </div>
         </div>
@@ -23,17 +21,17 @@
         </div>
       </div>
 
-      <div class="col-4 my-3">
+      <div class="col-md-4 col-sm-12 my-3">
 
-        <div class="d-flex justify-content-left text-center w-100 pt-6 pb-3 flex-wrap">
-          <span class="py-3">Contact</span>
+        <div class="pt-6 pb-3 address">
+          <span class="py-3">Contact</span><br>
           <span class="text-justify">
             +320123456 
             <br />
             Boulevard Saint-Miche l47,1040 ETTERBEEK
           </span>
         </div>
-        <div class="d-flex justify-content-left text-center w-100 pt-6 pb-3 flex-wrap">
+        <div class="pt-6 pb-3 social-icon">
           <div class="">
             <%= link_to "https://wa.me/32499319337", target: :blank, class: 'text-decoration-none lead px-2 text-white' do %>
               <%= inline_svg 'social/whatsapp.svg', class: 'icon icon-white icon-sm' %>

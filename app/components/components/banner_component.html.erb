@@ -1,0 +1,11 @@
+<section class="banner<%= classes %>" id=<%= @id %> <%= data_attributes %>>
+  <div class="banner-background">
+    <%= @background %>
+  </div>
+
+  <% if @content %>
+    <div class="banner-content">
+      <%= @content %>
+    </div>
+  <% end %>
+</section>

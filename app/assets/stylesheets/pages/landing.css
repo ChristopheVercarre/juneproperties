@@ -15,8 +15,9 @@
 
 .landing-page--button {
   background: transparent !important;
-  border: 1.5px solid white !important;
+  border: 1.5px solid #2EB1BF !important;
   position: absolute;
+  color: #2EB1BF !important;
   left: 0;
   right: 0;
   margin: auto;
