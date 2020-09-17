@@ -1,7 +1,9 @@
 <div class="landing-page">
   <%= render Views::Static::VirtualTourComponent.new %>
   <div class="logo">
-    <%= image_tag 'logo.png', width:"260px" %>
+  	<button class="btn btn-primary px-5 landing-page-button border-0" onclick=" window.open('https://www.facebook.com/junepropertiesbelgium','_blank')">
+      <%= image_tag 'logo.png', width:"260px" %>
+    </button>
   </div>
-  <%= link_to "Click To Visit", apartments_path, class: "btn btn-primary px-5 landing-page-button" %>
+  <button class="btn btn-primary px-5 landing-page-button" onclick=" window.open('https://calendly.com/juneproperties','_blank')"> Book a Visit</button>
 </div>
