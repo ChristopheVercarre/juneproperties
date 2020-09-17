@@ -1,1 +1,35 @@
 <%= render Views::Apartments::BannerComponent.new %>
+
+<%= render Bootstrap::Layouts::LevitatingSectionComponent.new sticky: { top: '0px' } do %>
+  <%= render Bootstrap::Layouts::ContainerComponent.new do %>
+    <%= render Bootstrap::Layouts::RowComponent.new do %>
+      <%= render Bootstrap::Layouts::ColumnComponent.new breakpoints: { xs: 12, lg: 12 }, options: {} do %>
+        <%= render Views::Apartments::HeaderComponent.new apartment: nil %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render Views::Apartments::ImagesSliderComponent.new apartment: nil %>
+
+
+<%= render Bootstrap::Layouts::SectionComponent.new do %>
+  <%= render Bootstrap::Layouts::ContainerComponent.new do %>
+    <%= render Bootstrap::Layouts::RowComponent.new do %>
+      <%= render Bootstrap::Layouts::ColumnComponent.new breakpoints: { xs: 12, lg: 8 }, options: { paddings: { lg: { r:  '8' } } } do %>
+        <%= render Views::Apartments::AmenitiesComponent.new apartment: nil %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render Bootstrap::Layouts::SectionComponent.new do %>
+  <%= render Bootstrap::Layouts::ContainerComponent.new do %>
+    <%= render Bootstrap::Layouts::RowComponent.new do %>
+      <%= render Bootstrap::Layouts::ColumnComponent.new breakpoints: { xs: 12, lg: 12 }, options: { paddings: { lg: { r:  '8' } } } do %>
+        <%= render Views::Apartments::GoogleMapComponent.new apartment: nil %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+

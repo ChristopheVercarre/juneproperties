@@ -1,0 +1,43 @@
+<section class="section screen screen-lg py-10">
+  <%= image_tag 'houses-sketch.png', class: 'screen-background screen-background-bottom' %>
+  <div class="screen-block screen-layer-sm">
+    <div class="container-fluid h-100 px-lg-8 w-75">
+      <div class="row align-items-stretch">
+        <div class="col-12 col-lg-7 order-2 order-lg-1">
+          <div
+            class="showcase showcase-column h-100"
+            data-controller="slider"
+            data-slider-per-page="1"
+            data-slider-draggable="false"
+            data-slider-page-dots="false"
+          >
+            <div data-target="slider.track" class="h-100">
+              <% ["01.jpg", "02.jpeg"].each do |image| %>
+                <div data-target="slider.slide" class="banner-layer">
+                  <div class="banner-overlay"></div>
+                  <%= image_tag "apartments/#{image}", class: 'banner-layer' %>
+                </div>
+              <% end %>
+            </div>
+            <%= link_to '', class: 'showcase-control showcase-prev', data: { action: 'click->slider#prev' } do %>
+              <%= inline_svg 'icons/chevron-left.svg' %>
+            <% end %>
+            <%= link_to '', class: 'showcase-control showcase-next', data: { action: 'click->slider#next' } do %>
+              <%= inline_svg 'icons/chevron-right.svg' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5 d-flex align-items-center mb-6 mb-lg-0 order-1 order-lg-2">
+          <div>
+            <h2 class="font-family-text font-weight-bold color-teal">
+              <%= '1 Bedroom apartment' %>
+            </h2>
+            <p class="lead d-none d-lg-block">
+              <%= "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)." %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

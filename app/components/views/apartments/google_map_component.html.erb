@@ -1,0 +1,11 @@
+<%= render Bootstrap::Layouts::SectionComponent.new id: 'apartment-header', options: { paddings: { xs: { t: '8', b: '3' } } } do %>
+
+  <%= render Bootstrap::Text::ParagraphComponent.new options: { class: 'label mb-4', color: 'muted' } do %>
+    <%= 'Neighborhood' %>
+  <% end %>
+
+  <%= render Bootstrap::Layouts::RowComponent.new options: { class: 'mb-6' } do %>
+    <%= image_tag "google_map.png", class: 'banner-layer' %>
+  <% end %>
+
+<% end %>
