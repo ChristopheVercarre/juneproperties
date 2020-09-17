@@ -1,0 +1,77 @@
+$base-spacer: .25rem;
+$min-multiplier: 0;
+$max-multiplier: 5;
+$layout-spacer-multiplier: 8;
+
+@for $multiplier from $min-multiplier through $max-multiplier {
+  @each $spacer-letter, $spacer in $spacer-options {
+    $spacing-unit: $base-spacer * $multiplier;
+    $layout-spacing-unit: $base-spacer * $multiplier * $layout-spacer-multiplier;
+
+    @each $direction-letter, $direction in $direction-options {
+      %#{$spacer-letter}#{$direction-letter}-#{$multiplier} {
+        #{$spacer}-#{$direction}: $spacing-unit;
+      }
+
+      %l-#{$spacer-letter}#{$direction-letter}-#{$multiplier} {
+        #{$spacer}-#{$direction}: $layout-spacing-unit;
+      }
+    }
+
+    @each $axis in $axis-options {
+      %#{$spacer-letter}#{$axis}-#{$multiplier} {
+        @if $axis == 'x' {
+          #{$spacer}-right: $spacing-unit;
+          #{$spacer}-left: $spacing-unit;
+        } @else if $axis == 'y' {
+          #{$spacer}-top: $spacing-unit;
+          #{$spacer}-bottom: $spacing-unit;
+        } @else {
+          #{$spacer}: $spacing-unit;
+        }
+      }
+
+      %l-#{$spacer-letter}#{$axis}-#{$multiplier} {
+        @if $axis == 'x' {
+          #{$spacer}-right: $layout-spacing-unit;
+          #{$spacer}-left: $layout-spacing-unit;
+        } @else if $axis == 'y' {
+          #{$spacer}-top: $layout-spacing-unit;
+          #{$spacer}-bottom: $layout-spacing-unit;
+        } @else {
+          #{$spacer}: $layout-spacing-unit;
+        }
+      }
+    }
+  }
+}
+
+@each $direction-letter, $direction in $direction-options {
+  %m#{$direction-letter}-a {
+    margin-#{$direction}: auto;
+  }
+}
+
+
+@each $axis in $axis-options {
+  %m#{$axis}-a {
+    @if $axis == 'x' {
+      margin-right: auto;
+      margin-left: auto;
+    } @else if $axis == 'y' {
+      margin-top: auto;
+      margin-bottom: auto;
+    } @else {
+      margin: auto;
+    }
+  }
+}
+
+
+br {
+  @extend %my-4, %ml-0, %border-0;
+
+  height: 4px;
+  width: 40px;
+}
+

@@ -1,0 +1,14 @@
+// Graphical variables
+@import "_legacy/config/colors";
+@import "_legacy/config/fonts";
+@import "_legacy/config/reset";
+@import "_legacy/config/generals";
+@import "_legacy/config/grid";
+@import "_legacy/config/icons";
+@import "_legacy/config/animations";
+
+// Your CSS partials
+@import "_legacy/components/index";
+@import "_legacy/dashboard/index";
+@import "_legacy/layouts/index";
+@import "_legacy/pages/index";

@@ -1,0 +1,372 @@
+main.dashboard.coloc section.edit-profile {
+  margin-bottom: 65px;
+}
+
+section.profile div.header {
+  display: grid;
+  grid-template-columns: 180px 2fr 1fr;
+  position: relative;
+  padding: 40px;
+  grid-gap: 20px;
+}
+
+section.profile div.header::after {
+  background: $coloc-cyan;
+  content: '';
+  box-shadow: $shadow;
+  border-radius: 10px;
+  position: absolute;
+  z-index: -9;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 110px;
+}
+
+section.profile div.header div.img {
+  border: none;
+  margin: 0;
+  box-shadow: $shadow;
+  width: 180px;
+  height: 180px;
+  border-radius: 4px;
+}
+
+section.profile div.header h1 {
+  text-align: left;
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0 0 10px;
+}
+
+section.profile div.header ul.infos {
+  margin-bottom: 0;
+}
+
+section.profile div.header ul.infos li {
+  color: $dark-white;
+  text-align: left;
+  font-size: 16px;
+}
+
+main.dashboard section.profile ul.social {
+  margin: 20px 0;
+}
+
+main.dashboard section.profile ul.social li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+section.profile ul.social li a {
+  color: white;
+}
+
+section.profile ul.social li a:hover {
+  color: $grey;
+}
+
+section.profile div.header div.buttons {
+  align-self: center;
+}
+
+section.profile div.full-profile {
+  margin: 20px 20px 65px 120px;
+}
+
+section.profile div.full-profile div.flex {
+  display: flex;
+  align-items: center;
+}
+
+section.profile div.full-profile ul {
+  margin: 0;
+}
+
+section.profile div.full-profile ul li {
+  text-align: left;
+  color: black;
+  margin: 5px 0;
+}
+
+section.profile div.full-profile ul.contact {
+  flex: 3;
+}
+
+section.profile div.full-profile ul.contact strong {
+  font-weight: 400;
+  color: $light-grey;
+  margin-right: 10px;
+}
+
+section.edit-profile h4,
+section.profile div.full-profile h4 {
+  text-transform: uppercase;
+  color: $light-grey;
+  font-size: 14px;
+  margin-top: 20px;
+  font-weight: 100;
+}
+
+section.profile div.full-profile ul.languages li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+section.edit-profile p,
+section.profile div.full-profile p {
+  color: black;
+}
+
+section.edit-profile form {
+  margin: 45px auto 20px;
+  position: relative;
+}
+
+section.edit-profile form div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section.edit-profile form div.img-modify {
+  border: none;
+  margin: 0 20px 0 0;
+  box-shadow: $shadow;
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+}
+
+section.edit-profile div.coloc_avatar label {
+  display: block;
+  font-size: 14px;
+  font-weight: 100;
+  color: $light-grey;
+  margin-bottom: 10px;
+}
+
+section.edit-profile h1 {
+  color: black;
+  font-size: 26px;
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+section.edit-profile label {
+  font-size: 12px;
+  color: $coloc-cyan;
+  text-transform: uppercase;
+  font-weight: 100;
+  display: block;
+}
+
+section.edit-profile input {
+  border: 1px solid $input-border;
+  color: $grey;
+  font-size: 14px;
+  margin: 10px 10px 10px 0;
+  border-radius: 4px;
+  padding: 7px 10px;
+}
+
+section.edit-profile input[type=file] {
+  border: 0;
+}
+
+section.edit-profile input::placeholder,
+section.edit-profile textarea::placeholder {
+  color: $input-border;
+  font-weight: 400;
+}
+
+section.edit-profile input:focus,
+section.edit-profile textarea:focus {
+  border-color: #fff;
+  box-shadow: $shadow;
+  transition: all 0.3s ease-in-out;
+}
+
+section.edit-profile div.readonly input,
+section.edit-profile div.readonly label {
+  border: 0;
+  color: $light-grey;
+}
+
+section.edit-profile label.social {
+  display: inline-block;
+}
+
+section.edit-profile label.social a {
+  color: white;
+}
+
+section.edit-profile label.social a:hover {
+  color: $grey;
+}
+
+section.edit-profile label.social i.icon {
+  font-size: 21px;
+  vertical-align: middle;
+  width: 21px;
+  display: inline-block;
+}
+
+section.edit-profile select {
+  outline: none;
+  border-radius: 0;
+  margin: 0;
+  background: #fff;
+  border: 1px solid $input-border;
+  color: $grey;
+  font-size: 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  height: 37px;
+  font-weight: 100;
+}
+
+section.edit-profile select:focus {
+  outline: none;
+}
+
+section.edit-profile div.coloc_bio {
+  width: 100%;
+  display: block;
+}
+
+section.edit-profile div.coloc_bio label {
+  display: none;
+}
+
+section.edit-profile textarea {
+  width: 78%;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 170%;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  border: 1px solid $input-border;
+  border-radius: 4px;
+  outline: none;
+  min-height: 300px;
+  height: auto;
+}
+
+.form-control-label.select.optional {
+  margin-bottom: 10px;
+}
+
+.select2-container {
+  width: 100% !important;
+  min-width: 327px;
+
+  @media (max-width: 900px) {
+    min-width: 0px;
+  }
+}
+
+.select2-container--default .select2-selection--multiple,
+.select2-dropdown {
+  border: 1px solid $input-border !important;
+}
+
+section.edit-profile input.button.blue.btn {
+  padding: 7px 50px;
+  color: white;
+  bottom: 400px;
+  left: 100%;
+}
+
+section.edit-profile input.button.blue.btn:hover {
+  color: $coloc-cyan;
+}
+
+section.edit-profile a.delete {
+  color: $error;
+  font-weight: 100;
+  border-bottom: 1px solid $error;
+  padding-bottom: 5px;
+}
+
+section.edit-profile a.delete:hover {
+  color: black;
+  border-color: black;
+}
+@media only screen and (max-width: 768px) {
+  main.dashboard.coloc {
+    grid-template-columns: minmax(50px, 1fr) minmax(500px, 768px) minmax(50px, 1fr);
+  }
+}
+@media only screen and (max-width: 500px) {
+  main.dashboard section.profile {
+    padding: 0;
+  }
+
+  section.profile div.header {
+    display: block;
+    padding: 20px;
+  }
+
+  section.profile div.header::after {
+    left: 0;
+    bottom: 20px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  section.profile div.header div.img {
+    margin: 10px auto;
+    width: 220px;
+    height: 150px;
+  }
+
+  section.profile div.header div:nth-child(2) {
+    padding: 20px 20px 0;
+    text-align: center;
+  }
+
+  section.profile div.header div h1,
+  section.profile div.header ul.infos li {
+    text-align: center;
+  }
+
+  section.profile div.full-profile {
+    margin: 20px;
+  }
+
+  section.profile div.full-profile ul.contact li {
+    text-align: center;
+  }
+
+  section.profile div.full-profile ul.contact li strong {
+    display: none;
+  }
+
+  main.dashboard.coloc section.edit-profile {
+    padding: 20px;
+  }
+
+  section.edit-profile form div.img-modify {
+    display: block;
+    margin: 0 auto;
+  }
+
+  section.edit-profile form div#picture-fields {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  section.edit-profile input,
+  section.edit-profile select,
+  section.edit-profile textarea {
+    width: 80vw;
+  }
+
+  div.social-fields input {
+    width: 72vw;
+  }
+}

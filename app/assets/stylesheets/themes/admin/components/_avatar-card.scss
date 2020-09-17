@@ -1,0 +1,51 @@
+.avatar-card {
+  &__avatar {
+    @extend .avatar--large, %mb-4;
+  }
+
+  &__title {
+    @extend %title-small, %mb-2;
+  }
+
+  &__subtitle {
+    @extend %paragraph, %mb-1;
+  }
+
+  &__highlight {
+    @extend %text-bold, %text-success;
+  }
+
+  &__cta {
+    @extend %d-b, %link-gray, %mt-4;
+  }
+
+  &--small {
+    @extend %mr-5, %mb-5, %d-f, %flex-c, %justify-c, %align-c, %position-relative;
+
+    &--with-logo {
+      @extend .avatar-card--small;
+
+      &::after {
+        @extend %position-absolute;
+
+        right: calc(50% - #{$avatar-size-sm / 2});
+        top: calc(#{$avatar-size-sm} - #{$base-spacer * 4});
+        content: '';
+        background-image: asset-url('icons/logo-short.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: $base-spacer * 4;
+        width: $base-spacer * 4;
+      }
+    }
+
+    .avatar-card__avatar {
+      @extend .avatar--small, %mb-2;
+    }
+
+    .avatar-card__title {
+      @extend %subtitle;
+    }
+  }
+}

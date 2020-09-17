@@ -1,0 +1,25 @@
+@each $position in $position-options {
+  %position-#{$position} {
+    position: $position;
+  }
+}
+
+@each $option-initial, $option in $display-options {
+  %d-#{$option-initial} {
+    display: $option;
+  }
+}
+
+$base-shadow-blur: .5rem;
+
+%shadow {
+  box-shadow: 0 0 $base-shadow-blur transparentize($black, .92);
+}
+
+%no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+}

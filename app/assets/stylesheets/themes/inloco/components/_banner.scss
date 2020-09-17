@@ -1,0 +1,152 @@
+$banner-btn-height: $spacer * 4;
+
+$banner-height-lg: 600px;
+$banner-height-md: 360px;
+$banner-height-xs: 300px;
+
+$banner-control-icon-size: $spacer * 2;
+$banner-control-side-spacing: $spacer * 2;
+$banner-control-top-spacing: calc(50% - #{$spacer * 2});
+
+.banner {
+  @extend .position-relative, .w-100;
+
+  .banner-background {
+    @extend .position-relative, .h-100;
+
+    height: 100px;
+  }
+
+  &-content {
+    @extend .position-absolute;
+
+    left: 0;
+    top: 0;
+  }
+
+  &-layer {
+    @extend .img-cover, .w-100;
+
+    height: $banner-height-xs;
+
+    @include media-breakpoint-up(md) {
+      height: $banner-height-md;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: $banner-height-lg;
+    }
+
+    &-full-height {
+      height: 100vh;
+    }
+  }
+
+  &-overlay {
+    @extend .img-overlay;
+  }
+
+  &-btn {
+    @extend .rounded-circle, .shadow, .bg-white;
+
+    height: $banner-btn-height;
+    width: $banner-btn-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    * {
+      pointer-events: none;
+    }
+
+    svg {
+      height: $banner-control-icon-size;
+      width: $banner-control-icon-size;
+      object-fit: contain;
+    }
+  }
+
+  &-slider {
+    @extend .position-relative;
+
+    z-index: 1;
+
+    &-nav {
+      @extend .position-absolute;
+
+      width: 100%;
+      left: 0;
+      height: auto;
+      bottom: $banner-control-side-spacing;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      align-items: center;
+      opacity: 1;
+
+      @include media-breakpoint-down(md) {
+        bottom: $banner-control-side-spacing / 2;
+      }
+    }
+
+    &-btn {
+      @extend .banner-btn, .ml-3;
+    }
+
+    &-controls {
+      @extend .position-absolute;
+
+      align-items: center;
+      bottom: $banner-control-side-spacing;
+      justify-content: center;
+      width: 100%;
+    }
+
+    &-control {
+      @extend .position-relative;
+
+      display: inline-block;
+      height: auto;
+      width: auto;
+
+      &::after {
+        @extend .rounded-circle, .shadow-sm, .mx-4, .bg-warning;
+
+        content: '';
+        position: relative;
+        display: block;
+        height: $spacer / 2;
+        width: $spacer / 2;
+        transition: all 0.2s ease-in-out;
+
+        &:not(:hover) {
+          @extend .bg-light;
+        }
+      }
+
+      &.active::after {
+        height: $spacer;
+        width: $spacer;
+
+        &:not(:hover) {
+        @extend .bg-white;
+
+        }
+      }
+    }
+
+    &-prev {
+      @extend .position-absolute, .bg-white, .banner-btn;
+
+      top: $banner-control-top-spacing;
+      left: $banner-control-side-spacing;
+    }
+
+    &-next {
+      @extend .position-absolute, .bg-white, .banner-btn;
+
+      top: $banner-control-top-spacing;
+      right: $banner-control-side-spacing;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.multi-section-form {
+  @extend .container, %l-pt-2;
+
+  &__section {
+    @extend %l-pb-2, %d-f, %justify-sb, %align-c, %wrap, %w-100;
+  }
+
+  &__section-title {
+    @extend %w-100, %shrink-0, %mb-5;
+  }
+
+  &__form {
+    @extend %grow-1, %d-f, %justify-sb, %align-c, %wrap;
+
+    .custom-input__input {
+      min-width: 0;
+    }
+  }
+
+  &__helper {
+    @extend %w-50, %l-pl-1, %mt-4;
+
+    &--full-width {
+      @extend .multi-section-form__helper, %w-100, %text-c, %l-mt-1;
+    }
+  }
+
+  &__row {
+    @extend %d-f, %mb-3;
+  }
+
+  &__submit {
+    @extend .btn--success, %ml-4, %my-2;
+  }
+}

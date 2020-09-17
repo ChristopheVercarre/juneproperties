@@ -1,0 +1,145 @@
+.modal {
+  @extend %position-fixed, %w-100vw, %h-100vh, %l-0, %t-0, %align-c, %justify-c, %d-n;
+
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 1000;
+
+  &.open {
+    @extend %d-f;
+  }
+
+  &__backdrop {
+    @extend %position-absolute, %w-100, %h-100, %l-0, %t-0;
+
+    background: transparentize($black, .1);
+    z-index: -1;
+
+    @media (max-width: $md-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__content {
+    @extend %bg-white, %rounded, %l-mb-2, %position-relative;
+
+    animation: slideUp 0.4s ease-in-out;
+    cursor: default;
+    height: 500px;
+    width: 800px;
+
+    @media (max-width: $md-breakpoint) {
+      height: 100%;
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  &__content--alert {
+    @extend .modal__content;
+
+    height: 250px;
+    width: 400px;
+
+    .modal__main {
+      @extend %w-100, %l-0, %l-p-1, %text-c;
+    }
+  }
+
+  &__aside {
+    @extend %position-absolute, %t-0, %l-0, %w-40, %h-100, %bg-success, %text-white, %d-f, %flex-c, %justify-c, %l-p-1;
+
+    border-radius: ($base-radius * 2) 0 0 ($base-radius * 2);
+
+    &--error {
+      @extend .modal__aside, %bg-error;
+    }
+
+    hr {
+      @extend %ml-0, %l-my-1;
+
+      border-bottom-width: 4px;
+    }
+
+    @media (max-width: $md-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__main {
+    @extend %position-absolute, %t-0, %l-40, %h-100, %w-60, %d-f, %flex-c, %justify-sb, %l-p-2;
+
+    @media (max-width: $md-breakpoint) {
+      height: 100%;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &__header {
+    @extend %d-f, %justify-sb;
+
+    &-title {
+      h2 {
+        @extend %mb-3;
+      }
+
+      h4 {
+        @extend %mb-2;
+      }
+
+      small {
+        @extend %text-gray;
+      }
+    }
+
+    &-legend {
+      @extend %shrink-0;
+
+      dl {
+        @extend %text-r;
+
+        &:not(:last-child) {
+          @extend %mb-5;
+        }
+      }
+
+      dt {
+        @extend %text-gray;
+      }
+
+      dd {
+        @extend %text-large, %text-light;
+      }
+    }
+  }
+
+  &__body {
+    @extend %d-f, %flex-c, %justify-c;
+
+    flex-grow: 1;
+  }
+
+  &__footer {
+    @extend %d-f, %justify-fe, %align-c;
+
+    &--content-c {
+      @extend .modal__footer, %justify-c;
+
+      a,
+      button,
+      input {
+        @extend %mx-2;
+      }
+    }
+  }
+
+  // &__helper {}
+  // &__helper-title {}
+
+  &__helper-subtitle {
+    @extend %label, %pb-4;
+  }
+  &__helper-paragraph {
+    @extend %mb-4;
+  }
+}

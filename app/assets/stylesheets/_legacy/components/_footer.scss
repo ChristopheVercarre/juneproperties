@@ -1,0 +1,132 @@
+a.footer-img {
+  display: block;
+  margin-top: 65px;
+  height: 248px;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+}
+
+main.dashboard ~ a.footer-img {
+  display: none;
+}
+
+footer {
+  position: relative;
+  z-index: 9999;
+  background: #1F2231;
+  color: #66757F;
+  font-weight: 100;
+  font-size: 16px;
+  padding: 20px 0;
+  row-gap: 20px;
+}
+
+footer section.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 40px;
+  margin: 25px 0;
+  grid-column-gap: 100px;
+}
+
+footer section div.footer-top-left a {
+  height: 53px;
+  color: #66757F;
+}
+
+footer section div.footer-top-left a:hover {
+  height: 53px;
+  color: #fff;
+}
+
+footer section div.footer-top-left a img {
+  width: 100px;
+}
+
+footer section div.footer-top-left ul {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+footer section div.footer-top-left ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+footer section div.footer-bottom-left fieldset {
+  border: 1px solid #66757F;
+  display: inline-block;
+  width: 50%;
+  vertical-align: text-bottom;
+}
+
+footer section div.footer-bottom-left legend {
+  font-size: 14px;
+  background: #1F2231;
+  padding: 5px;
+  margin: 0 5px;
+  padding: 0 10px;
+}
+
+footer section div.footer-bottom-left form input#mce-EMAIL {
+  width: 100%;
+  background: none;
+  padding: 5px 15px 7px;
+  font-size: 14px;
+  font-weight: 100;
+  color: #66757F;
+}
+
+footer section div.footer-bottom-left form input#mc-embedded-subscribe {
+  padding: 11px 17px;
+  vertical-align: text-bottom;
+}
+
+footer section div.footer-bottom-left form input#mce-EMAIL::placeholder {
+  color: #66757F;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+footer section div.footer-bottom-right a {
+  font-size: 25px;
+  color: #66757F;
+  margin: 0 10px;
+}
+
+footer section div.footer-bottom-right a:hover {
+  color: #fff;
+}
+
+footer span.copyright {
+  grid-column: 2;
+  font-size: 12px;
+}
+@media only screen and (max-width: 768px) {
+  footer section.grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: 25px 10px;
+  }
+
+  footer section div.footer-top-left ul {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  footer section div.footer-bottom-left fieldset {
+    width: auto;
+    display: block;
+  }
+
+  footer section div.footer-bottom-left form input#mc-embedded-subscribe {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  a.footer-img {
+    height: 120px;
+  }
+}
+@media screen and (min-width: 1200px) {}

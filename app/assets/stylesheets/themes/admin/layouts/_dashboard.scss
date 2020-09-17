@@ -1,0 +1,54 @@
+$dashboard-sidebar-width: 90px;
+$dashboard-header-height: 90px;
+
+.dashboard {
+  @extend %position-absolute, %h-100vh, %w-100vw, %t-0, %l-0;
+
+  &__header {
+    @extend %position-absolute, %t-0, %border-b-2-white-dark, %l-pl-2, %l-pr-4, %py-5, %d-f, %align-c, %justify-sb;
+
+    height: $dashboard-header-height;
+    left: $dashboard-sidebar-width;
+    width: calc(100% - #{$dashboard-sidebar-width});
+    z-index: 1;
+
+    * {
+      z-index: 0;
+    }
+  }
+
+  &__header-actions {
+    @extend %d-f;
+
+    a,
+    button,
+    input {
+      @extend %ml-1;
+    }
+  }
+
+  &__sidebar {
+    @extend %position-absolute, %h-100, %t-0, %l-0, %border-r-2-white-dark;
+
+    width: $dashboard-sidebar-width;
+  }
+
+  &__content {
+    @extend %position-absolute;
+
+    height: calc(100% - #{$dashboard-header-height});
+    left: $dashboard-sidebar-width;
+    overflow-y: scroll;
+    top: $dashboard-header-height;
+    width: calc(100% - #{$dashboard-sidebar-width});
+    z-index: 0;
+
+    &-header {
+      @extend %bg-white-dark, %w-100, %l-pl-2, %l-pr-4, %py-5, %d-f, %align-c, %justify-sb;
+    }
+
+    &-body {
+      @extend %l-pl-2, %l-pr-4, %pt-5, %l-pb-2;
+    }
+  }
+}

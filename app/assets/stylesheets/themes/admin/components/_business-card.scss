@@ -1,0 +1,162 @@
+.business-card {
+  @extend %d-f, %align-c, %justify-c, %text-l, %w-100;
+
+  &__title {
+    @extend %pl-3, %pr-5, %border-r-2-white-dark;
+
+    flex: 0 0 250px;
+  }
+
+  &__details {
+    @extend %px-5, %d-f;
+
+    flex: 1 1 auto;
+
+    &-row {
+      @extend .row, %mb-0;
+
+      dl {
+        flex: 1 1 50%;
+        width: 50%;
+
+        &:not(:last-child) {
+          @extend %pr-4;
+        }
+      }
+
+      dd {
+        @extend %mb-3;
+        @include max-lines-of-text(1, 1.6, 16px);
+
+        & > *:not(.flag-icon) {
+          @extend %d-i;
+        }
+      }
+    }
+
+    &-row--spaced-out {
+      @extend .row--spaced-out;
+    }
+
+    &-paragraph {
+      @extend %paragraph-small;
+
+      height: 150px;
+      overflow-y: scroll;
+    }
+  }
+
+  &__image {
+    @extend %rounded-large;
+
+    height: 100px;
+    width: 150px;
+  }
+
+  &__avatar {
+    @extend .avatar, %ml-3;
+  }
+
+  &__name {
+    @extend %ml-3, %mb-1;
+  }
+
+  &__description {
+    @extend %ml-3, %paragraph-small;
+
+    font-size: 12px;
+    max-width: 220px;
+
+    &--success {
+      @extend .business-card__description, %text-bold, %text-success;
+    }
+  }
+
+  &__address {
+    @extend %text-light, %paragraph-small, %text-gray, %mt-1;
+
+    font-size: 12px;
+  }
+
+  &--large {
+    @extend .business-card;
+
+    & .business-card__title {
+      @extend %text-c, %pl-0;
+
+      flex: 0 0 200px;
+    }
+
+    & .business-card__name {
+      @extend %text-c, %ml-0;
+    }
+
+    & .business-card__description {
+      @extend %text-c, %ml-0;
+    }
+
+    & .business-card__details {
+      @extend %text-j, %d-f, %flex-c, %justify-c, %pr-0;
+
+      flex: 1 0 0;
+      min-height: 160px;
+
+      & > div:not(:last-child) dd {
+        @extend %mb-5;
+      }
+    }
+
+    & .business-card__avatar--with-badge {
+      @extend .avatar--with-badge, %mb-2;
+
+      .business-card__avatar-image {
+        @extend .avatar__image;
+
+        height: 75px;
+        width: 75px;
+      }
+
+      .business-card__avatar-badge {
+        @extend .avatar__badge;
+      }
+    }
+
+    & .business-card__image {
+      @extend %mb-2;
+    }
+  }
+
+  &__table {
+    height: 150px;
+    overflow-y: scroll;
+
+    &-row {
+      @extend .icon-card;
+    }
+
+    &-row-icon {
+      @extend .icon-card__icon;
+    }
+
+    &-row-details {
+      @extend .icon-card__body;
+    }
+
+    &-row-content {
+      @extend .icon-card__content;
+
+      line-height: 1.4;
+      margin-bottom: 0 !important;
+    }
+
+    &-row-actions {
+      @extend %d-f, %justify-sb;
+
+      flex: 0 0 auto;
+
+      a {
+        @extend %ml-1;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.icon-card {
+  @extend %d-f, %align-c;
+
+
+  &__icon {
+    @extend .icon-circle, %mr-4;
+
+    flex: 0 0 auto;
+
+    @each $color-name, $color-code in $transparent-theme-colors {
+      &--#{$color-name} {
+        @extend .icon-card__icon, .icon-circle--#{$color-name};
+      }
+    }
+  }
+
+  &__body {
+    @extend %py-4, %mr-3;
+
+    flex: 1 1 auto;
+  }
+
+  &__content {
+    @extend %text-small;
+
+    line-height: 1.6;
+
+    &--spaced {
+      @extend .icon-card__content, %mb-2;
+    }
+
+    &--small-muted {
+      @extend %text-gray, %text-xs, %text-normal, %mb-0;
+    }
+  }
+}

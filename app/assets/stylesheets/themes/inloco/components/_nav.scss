@@ -1,0 +1,30 @@
+.nav {
+  &-district {
+    .nav-link {
+      @extend .px-2, .small, .position-relative, .pb-3;
+
+      text-decoration: none;
+      flex: 1 0 120px;
+
+      i, svg {
+        pointer-events: none;
+      }
+
+      &.active {
+        @extend .font-weight-bold;
+
+        letter-spacing: -.2px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 4px;
+          width: 100%;
+          background: $warning;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+$client-navbar-height: 88px;
+$client-navbar-logo-height: 36px;
+
+.navbar {
+  @extend %d-f, %justify-sb, %align-c, %border-b-2-white-dark;
+
+  height: $client-navbar-height;
+
+  @media (max-width: $md-breakpoint) {
+    display: none;
+  }
+
+  &__logo {
+    height: $client-navbar-logo-height;
+  }
+
+  &__nav {
+    align-self: stretch;
+  }
+
+  &__link-list {
+    @extend .list--inline, %h-100;
+  }
+
+  &__link-list-item {
+    @extend %h-100;
+  }
+
+  &__link {
+    @extend %h-100, %d-f, %align-c, %border-b-2-transparent, %px-4;
+
+    &:hover {
+      @extend %text-bold, %border-b-2-black;
+    }
+  }
+}

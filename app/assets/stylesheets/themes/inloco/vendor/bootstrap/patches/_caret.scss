@@ -1,0 +1,34 @@
+.caret {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    @extend .ml-1, .d-block;
+
+    position: relative;
+    height: auto;
+    content: asset-data-url('icons/caret.svg');
+    transition: transform .2s ease-in-out;
+  }
+
+  &-white {
+    &::after {
+      content: asset-data-url('icons/caret-white.svg');
+    }
+  }
+
+  &[aria-expanded="true"] {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover,
+  &[aria-expanded="true"] {
+    svg {
+      opacity: 1;
+    }
+  }
+}

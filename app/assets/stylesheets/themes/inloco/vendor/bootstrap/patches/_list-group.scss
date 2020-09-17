@@ -1,0 +1,20 @@
+.list-group {
+  &-item {
+    cursor: pointer;
+
+    &:hover {
+      color: $primary !important;
+    }
+
+    &.active {
+      color: $primary !important;
+      background: rgba($primary, 0.3);
+    }
+  }
+
+  &-input {
+    @extend .inline-input;
+
+    padding: $list-group-item-padding-y $list-group-item-padding-x;
+  }
+}

@@ -1,0 +1,34 @@
+@keyframes laptop {
+  1% {
+    background-image: asset-url('animated/laptop/1.png');
+  }
+  32% {
+    background-image: asset-url('animated/laptop/1.png');
+  }
+  33% {
+    background-image: asset-url('animated/laptop/2.png');
+  }
+  66% {
+    background-image: asset-url('animated/laptop/2.png');
+  }
+  67% {
+    background-image: asset-url('animated/laptop/3.png');
+  }
+  100% {
+    background-image: asset-url('animated/laptop/3.png');
+  }
+}
+
+.animate-with-laptop {
+  background-image: asset-url('animated/laptop/1.png');
+  background-size: cover;
+  background-position: center;
+  // animation-name: laptop;
+  // animation-duration: 5s;
+  // animation-timing-function: linear;
+  // animation-delay: 0s;
+  // animation-iteration-count: infinite;
+  // animation-direction: forwards;
+  // animation-fill-mode: forwards;
+  // animation-play-state: ;
+}

@@ -1,0 +1,128 @@
+// .dropdown {
+//   @extend %position-relative;
+
+//   appearance: none;
+//   width: auto;
+//   // &-toggle {}
+
+//   &__menu {
+//     @extend %bg-white, %px-2,  %py-4, %rounded, %shadow, %d-n;
+
+//     max-height: 100vh;
+//     min-width: 100%;
+//     overflow-y: scroll;
+//     z-index: 999;
+
+//     &--select {
+//       @extend .dropdown__menu;
+
+//       &[x-placement="bottom"] {
+//         border-radius: 0 0 ($base-radius * 2) ($base-radius * 2);
+//       }
+
+//       &[x-placement="top"] {
+//         border-radius: ($base-radius * 2) ($base-radius * 2) 0 0;
+//       }
+//     }
+
+//      &-header {
+//        @extend %d-f, %border-b-2-white-dark, %mb-3;
+
+//         &-title {
+//           @extend %text-large, %text-gray, %pb-5, %pt-0;
+
+//           text-transform: capitalize;
+//         }
+
+//         &-action {
+//           @extend %text-small, %text-success, %pb-5;
+//         }
+//      }
+
+//     &-body {
+//       @extend %d-b;
+
+//       flex: 1 1 auto;
+//     }
+
+//     &-link {
+//       @extend %d-b, %py-3, %px-5, %text-small, %text-black, %rounded;
+
+//       &:hover {
+//         @extend %text-success, %bg-white-dark;
+
+//         text-decoration: none !important;
+//       }
+//     }
+//   }
+
+//   &--open {
+//     @extend .dropdown;
+
+//     .dropdown__menu {
+//       @extend %d-b;
+//     }
+//   }
+// }
+
+.dropdown {
+  position: relative;
+  width: auto;
+
+  // &-toggle {}
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    background: white;
+    visibility: hidden;
+    transform: scale(0.8) translate(20%, -20%);
+    transition: all .1s ease-in-out 0s;
+    padding: 1.75rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    display: block;
+    overflow-y: scroll;
+
+    // visibility: visible;
+    // transform: scale(1) translate(0);
+    // opacity: 1;
+
+     &-header {
+       display: flex;
+       border-bottom: 2px solid #f7f7f7;
+       margin-bottom: .75rem;
+
+        &-title {
+          font-size: 17px;
+          color: $grey;
+          text-transform: capitalize;
+          padding-top: 0;
+          padding-bottom: 15px;
+        }
+
+        &-action {
+          font-size: 13px;
+          color: $peach;
+          padding-bottom: 15px;
+        }
+     }
+
+    &-body {
+      flex: 1 1 auto;
+      display: block;
+      width: auto;
+    }
+  }
+
+  &--open {
+    @extend .dropdown;
+
+    .dropdown__menu {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

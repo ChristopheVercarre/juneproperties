@@ -1,0 +1,89 @@
+footer,
+main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) minmax(768px, 1100px) minmax(20px, 1fr);
+  row-gap: 65px;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+main {
+  margin-bottom: 65px;
+}
+
+.fullsize,
+main > * {
+  grid-column: 1/4;
+}
+
+section {
+  grid-column: 2;
+}
+@media only screen and (max-width: 768px) {
+  footer,
+  main {
+    grid-template-columns: 65px minmax(500px, 1fr) 65px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  footer,
+  main {
+    grid-template-columns: 30px minmax(200px, 1fr) 30px;
+  }
+}
+
+$justify-options: (
+  c: center,
+  sb: space-between,
+  sa: space-around,
+  se: space-evenly,
+  fs: flex-start,
+  fe: flex-end
+);
+
+$align-options: (
+  c: center,
+  s: stretch,
+  fs: flex-start,
+  fe: flex-end
+);
+
+$direction-options: (
+  r: row,
+  rr:row-reverse,
+  c: column,
+  cr: column-reverse
+);
+
+$flex-options: (0, 1);
+
+.flex {
+  display: flex;
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  @each $option in $flex-options {
+    .grow-#{$option} {
+      flex-grow: $option;
+    }
+
+    .shrink-#{$option} {
+      flex-shrink: $option;
+    }
+  }
+}
+
+@each $name, $option in $justify-options {
+  .justify-#{$name} {
+    justify-content: $option;
+  }
+}
+
+@each $name, $option in $align-options {
+  .align-#{$name} {
+    align-items: $option;
+  }
+}

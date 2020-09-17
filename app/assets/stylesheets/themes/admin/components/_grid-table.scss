@@ -1,0 +1,282 @@
+$rents-table-column-widths: 5% 22% 20% 20% 20% 13%;
+$rents-table-footer-column-widths: (5% + 22% + 20% + 20%) 20% 13%;
+
+@keyframes show-subtable {
+  0% {
+    transform: scaleY(0) translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1) translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes show-subtable {
+  0% {
+    transform: scaleY(0) translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1) translateY(0%);
+    opacity: 1;
+  }
+}
+
+.grid-table {
+  &__row {
+    @extend %d-g, %w-100, %d-f, %align-c;
+
+    grid-template-columns: $rents-table-column-widths;
+    grid-template-rows: auto auto;
+    transition: height .05s ease-in-out;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    &--header {
+      @extend .grid-table__row;
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--body {
+      @extend .grid-table__row, %border-2-white-dark, %rounded, %my-2;
+    }
+
+    &--body--open {
+      @extend .grid-table__row, %rounded, %my-2, %border-2-black;
+
+      .grid-table__subtable {
+        @extend %d-b;
+
+        animation: show-subtable .05s ease-in-out;
+      }
+    }
+
+    &--selected.grid-table__row--body:not(.grid-table__row--body--open) {
+      @extend %border-2-success;
+    }
+
+    &--subtable-header {
+      @extend .grid-table__row;
+    }
+
+    &--subtable-body {
+      @extend .grid-table__row;
+    }
+
+    &--subtable-footer {
+      @extend .grid-table__row, %bg-white-dark, %mt-3, %text-small;
+
+      border-radius: 0 0 $base-radius $base-radius;
+      grid-template-columns: $rents-table-footer-column-widths;
+    }
+  }
+
+  &__header-cell {
+    @extend %label-small, %text-gray, %py-4, %px-4, %border-b-2-white-dark, %h-100;
+
+    a {
+      color: inherit;
+    }
+
+    &--center {
+      @extend .grid-table__header-cell, %text-c;
+    }
+
+    &--right {
+      @extend .grid-table__header-cell, %text-r, %pl-0, %pr-4;
+    }
+
+    &--sort-asc {
+      @extend .grid-table__header-cell, %text-black;
+
+      svg {
+        path:first-of-type {
+          stroke: transparent;
+        }
+
+        path:last-of-type {
+          stroke: $black;
+        }
+      }
+    }
+
+    &--sort-desc {
+      @extend .grid-table__header-cell, %text-black;
+
+      svg {
+        path:first-of-type {
+          stroke: $black;
+        }
+
+        path:last-of-type {
+          stroke: transparent;
+        }
+      }
+    }
+  }
+
+  &__body-cell {
+    @extend %py-5, %pl-4;
+
+    button {
+      @extend %ml-1;
+    }
+
+    &--center {
+      @extend .grid-table__body-cell, %text-c;
+    }
+
+    &--right {
+      @extend .grid-table__body-cell, %text-r, %pl-0, %pr-4;
+    }
+
+    &--content-center {
+      @extend .grid-table__body-cell, %d-f, %align-c, %justify-c;
+
+      padding: 0 !important;
+    }
+
+    &--content-center-right {
+      @extend .grid-table__body-cell, %d-f, %align-c, %justify-fe;
+    }
+  }
+
+  &__content {
+    @extend %text-small;
+
+    &--light {
+      @extend .grid-table__content, %text-gray;
+    }
+
+    &--error {
+      @extend .grid-table__content, %text-error;
+    }
+
+    &--success {
+      @extend .grid-table__content, %text-success;
+    }
+
+    &--label {
+      @extend .grid-table__content, %label;
+    }
+
+    &--spaced {
+      @extend .grid-table__content, %mb-2;
+    }
+
+    &--center-right {
+      @extend .grid-table__content, %d-f, %justify-fe;
+    }
+
+    &--paragraph {
+      @extend %paragraph-small;
+    }
+
+    &--strike-through {
+      @extend .grid-table__content, %text-gray, %mx-1;
+
+      text-decoration: line-through;
+    }
+  }
+
+  &__subtable {
+    @extend %d-n;
+
+    grid-column-end: span 6;
+    grid-column-start: 1;
+    padding: 1px;
+  }
+
+  &__subtable-header-cell {
+    @extend %label-small, %text-gray, %py-1, %px-4, %border-b-1-white-dark, %border-t-1-white-dark, %h-100;
+
+    &--center {
+      @extend .grid-table__subtable-header-cell, %text-c;
+    }
+
+    &--right {
+      @extend .grid-table__subtable-header-cell, %text-r;
+    }
+  }
+
+  &__subtable-body-cell {
+    @extend %py-4, %text-small, %px-4;
+
+    p + * {
+      @extend %ml-4;
+    }
+
+    &--center {
+      @extend .grid-table__subtable-body-cell, %text-c;
+    }
+
+    &--right {
+      @extend .grid-table__subtable-body-cell, %text-r;
+    }
+
+    &--content-center {
+      @extend .grid-table__subtable-body-cell, %d-f, %align-c, %justify-c;
+
+      padding: 0 !important;
+    }
+
+    &--content-center-right {
+      @extend .grid-table__subtable-body-cell, %d-f, %align-c, %justify-fe;
+    }
+  }
+
+  &__empty-message {
+    @extend %text-c, %my-4;
+  }
+}
+
+
+.grid-table.contracts-table {
+  & .grid-table__row {
+    grid-template-columns: 18% 18% 10% 13% 15% 15% auto;
+    grid-template-rows: auto auto;
+  }
+
+  & .grid-table__row--body {
+    &:hover {
+      @extend %border-2-success;
+
+      cursor: pointer;
+    }
+  }
+
+  .grid-table__row--subtable-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .grid-table__subtable {
+    grid-column-end: span 7;
+    grid-column-start: 1;
+
+    .grid-table__content--paragraph {
+      max-height: 100px;
+      overflow-y: scroll;
+    }
+  }
+
+  .grid-table__row--subtable-footer {
+    @extend %l-px-2;
+
+    grid-template-columns: 1fr;
+
+    a,
+    button,
+    input {
+      @extend %mx-2, %d-b;
+    }
+  }
+}

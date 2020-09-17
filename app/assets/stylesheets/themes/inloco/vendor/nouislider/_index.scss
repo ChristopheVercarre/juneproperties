@@ -1,0 +1,48 @@
+.noUi-connects {
+  @extend .bg-light;
+}
+
+.noUi-connect {
+  @extend .bg-primary, .border-0;
+}
+
+.noUi-handle {
+  @extend .rounded-circle, .border-0;
+
+  background: $green-dark;
+  box-shadow: none;
+  height: $spacer !important;
+  width: $spacer !important;
+  cursor: grab;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::after,
+  &::before {
+    @extend .d-none;
+  }
+}
+
+.noUi-target {
+  border: none !important;
+}
+
+$nouiSlider-bar-height: 10px;
+
+.noUi-horizontal {
+  height: $nouiSlider-bar-height !important;
+
+  .noUi-handle {
+    top: (- $nouiSlider-bar-height / 2) + 1px !important;
+  }
+
+  .noUi-handle-lower {
+    right: - $spacer / 2 !important;
+  }
+
+  .noUi-handle-upper {
+    right: - $spacer / 2 !important;
+  }
+}

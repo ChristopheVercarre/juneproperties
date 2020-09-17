@@ -1,0 +1,82 @@
+%border-0 {
+  border: 0;
+}
+
+@each $direction-letter, $direction in $direction-options {
+  %border-#{$direction-letter}-0 {
+    border-#{$direction}-width: 0;
+  }
+}
+
+@each $color-name, $color-code in $all-colors {
+  @for $border-width from 1 through 2 {
+
+    %border-#{$border-width}-#{$color-name} {
+      border: $border-width * 1px solid $color-code;
+    }
+
+    @each $direction-letter, $direction in $direction-options {
+
+      %border-#{$direction-letter}-#{$border-width}-#{$color-name} {
+        border-#{$direction}: $border-width * 1px solid $color-code;
+      }
+    }
+  }
+
+  %bottom-accent-#{$color-name} {
+    @extend %position-relative;
+
+    &::after {
+      @extend %position-absolute, %b-0, %bg-#{$color-name};
+
+      content: '';
+      height: 4px;
+      left: calc(50% - #{$bottom-accent-width / 2});
+      width: $bottom-accent-width;
+    }
+  }
+}
+
+@each $color-name, $color-code in $transparent-theme-colors {
+  @for $border-width from 1 through 2 {
+
+    %border-transparent-#{$border-width}-#{$color-name} {
+      border: $border-width * 1px solid $color-code;
+    }
+
+    @each $direction-letter, $direction in $direction-options {
+
+      %border-transparent-#{$direction-letter}-#{$border-width}-#{$color-name} {
+        border-#{$direction}: $border-width * 1px solid $color-code;
+      }
+    }
+  }
+}
+
+$base-radius: 4px;
+
+%rounded-0 {
+  border-radius: 0;
+}
+
+%rounded-small {
+  border-radius: $base-radius;
+}
+
+%rounded {
+  border-radius: $base-radius * 2;
+}
+
+%rounded-large {
+  border-radius: $base-radius * 4;
+}
+
+%rounded-circle {
+  border-radius: 50%;
+}
+
+hr {
+  @extend %border-b-2-white-dark, %border-t-0, %border-l-0, %border-r-0, %mx-a, %l-my-1;
+
+  width: 60px;
+}

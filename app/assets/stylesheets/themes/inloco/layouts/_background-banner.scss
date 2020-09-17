@@ -1,0 +1,33 @@
+$background-banner-header-height: $navbar-height;
+$background-banner-footer-height: 300px;
+
+.background-banner {
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+
+  &-header {
+    height: $background-banner-header-height;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &-content {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  &-footer {
+    height: $background-banner-footer-height;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2s;
+  }
+}

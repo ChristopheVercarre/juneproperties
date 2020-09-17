@@ -1,0 +1,20 @@
+input[type="checkbox"],
+input[type="radio"] {
+  @extend %position-relative;
+
+  appearance: none;
+  width: 14px;
+  height: 14px;
+
+  &::after {
+    @extend %position-absolute, %w-100, %h-100, %t-0, %l-0;
+
+    background-image: asset-url('icons/circle-checkmark-gray-transparent-bg.svg');
+    background-size: cover;
+    content: '';
+  }
+
+  &:checked::after {
+    background-image: asset-url('icons/circle-checkmark-green-bg.svg');
+  }
+}

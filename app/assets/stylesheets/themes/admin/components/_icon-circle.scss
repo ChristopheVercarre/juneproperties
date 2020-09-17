@@ -1,0 +1,78 @@
+$icon-circle-size: 40px;
+$icon-circle-size-sm: 24px;
+
+.icon-circle {
+  @extend %rounded-circle, %bg-white-dark, %d-f, %justify-c, %align-c, %position-relative;
+
+  height: $icon-circle-size;
+  width: $icon-circle-size;
+
+  & > svg {
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+
+    path,
+    circle,
+    rect {
+      fill: $black;
+    }
+  }
+
+  &--small {
+    @extend .icon-circle;
+
+    height: $icon-circle-size-sm;
+    width: $icon-circle-size-sm;
+
+    & > svg {
+      height: 14px;
+      object-fit: contain;
+      width: 14px;
+    }
+  }
+
+  &--white {
+    @extend .icon-circle;
+
+    background: $white;
+
+    & > svg {
+      path,
+      circle,
+      rect {
+        fill: $gray;
+      }
+    }
+  }
+
+  @each $color-name, $color-code in $transparent-theme-colors {
+    &--#{$color-name} {
+      @extend .icon-circle;
+
+      background: $color-code;
+
+      & > svg {
+        height: 24px;
+        width: 24px;
+        object-fit: contain;
+
+        path,
+        circle,
+        rect {
+          fill: map-get($theme-colors, $color-name);
+        }
+      }
+    }
+  }
+
+  &__label {
+    @extend %position-absolute, %t-0, %r-0;
+
+    svg {
+      height: 16px;
+      width: 16px;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.job-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.job-description .job-full-description {
+  width: 60%;
+}
+
+.job-description .job-full-description p {
+  font-size: 16px;
+}
+
+.job-description .job-full-description ul {
+  padding-left: 40px;
+  font-size: 16px;
+  list-style: initial;
+}
+
+.job-description .job-full-description ul li {
+  font-weight: 100;
+  color: #66757F;
+  line-height: 170%;
+  margin-bottom: 15px;
+}
+
+.job-description .contact {
+  position: sticky;
+  top: 100px;
+  display: block;
+  width: 35%;
+  padding: 20px;
+  background: rgba(241,245,247,0.7);
+  border-radius: 10px;
+}
+
+.job-description .contact a {
+  color: $peach;
+}
+
+.job-description .contact a:hover {
+  color: black;
+}
+@media only screen and (max-width: 500px) {
+  .job-description {
+    flex-direction: column;
+  }
+
+  .job-description .contact,
+  .job-description .job-full-description {
+    width: 100%;
+  }
+}

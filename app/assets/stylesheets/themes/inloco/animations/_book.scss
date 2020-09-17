@@ -1,0 +1,31 @@
+@keyframes book {
+  0%, 60% {
+    background-image: asset-url('animated/book/1.png');
+  }
+  2.5%, 57.5% {
+    background-image: asset-url('animated/book/2.png');
+  }
+  5%, 55% {
+    background-image: asset-url('animated/book/3.png');
+  }
+  7.5%, 52.5% {
+    background-image: asset-url('animated/book/4.png');
+  }
+  10%, 50% {
+    background-image: asset-url('animated/book/5.png');
+  }
+}
+
+.animate-with-book {
+  background-image: asset-url('animated/book/5.png');
+  background-size: cover;
+  background-position: center;
+  // animation-name: book;
+  // animation-duration: 10s;
+  // animation-timing-function: linear;
+  // animation-delay: 2s;
+  // animation-iteration-count: 1;
+  // animation-direction: forwards;
+  // animation-fill-mode: forwards;
+  // animation-play-state: ;
+}

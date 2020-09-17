@@ -1,0 +1,39 @@
+$client-docker-height: 60px;
+$client-docker-icon-size: 20px;
+
+.docker {
+  @extend %position-fixed, %b-0, %l-0, %w-100vw, %bg-white, %d-f, %align-c, %px-5, %shadow;
+
+  border-radius: ($base-spacer * 8) ($base-spacer * 8) 0 0;
+  height: $client-docker-height;
+
+  @media (min-width: $md-breakpoint) {
+    display: none;
+  }
+
+  &__link-list {
+    @extend %w-100, %d-f, %justify-sb, %pt-1;
+  }
+
+  &__link-list-item {
+    @extend %d-b;
+  }
+
+  &__link {
+    @extend %px-2, %d-b, %text-c;
+
+    svg {
+      height: $client-docker-icon-size;
+      object-fit: contain;
+      width: $client-docker-icon-size;
+
+      path {
+        fill: $black;
+      }
+    }
+
+    span {
+      @extend %label-small;
+    }
+  }
+}

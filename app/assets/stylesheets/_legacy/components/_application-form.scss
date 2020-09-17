@@ -1,0 +1,80 @@
+.application-form {
+  &__title {
+
+  }
+
+  &__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+    .form-group {
+      flex-grow: 1;
+
+      &.fake label {
+        opacity: 0.5;
+      }
+    }
+
+    .form-group:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    .contract_application_form_coloc_birthday,
+    .contract_application_form_coloc_gender {
+      flex-grow: 0;
+    }
+
+    .contract_application_form_coloc_nationality_code {
+      max-width: 200px;
+    }
+
+    .contract_application_form_coloc_mobile_country_code {
+      max-width: 150px;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    input {
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .contract_application_form_colocation_address {
+      width: auto !important;
+    }
+
+    a {
+      display: block;
+      color: $peach;
+      padding: .5rem 0;
+      margin-bottom: 10px;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 13px;
+    }
+  }
+
+  &__phone-verify-button {
+    display: none;
+  }
+}
+
+#verify_code {
+  display: none;
+}
+
+#verify_code .form-group {
+  width: 100%;
+}
+
+#verify_code .d-flex {
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

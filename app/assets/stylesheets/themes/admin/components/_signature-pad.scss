@@ -1,0 +1,5 @@
+.signature-pad {
+  @extend %rounded, %border-2-white-dark, %w-100;
+
+  height: 300px;
+}

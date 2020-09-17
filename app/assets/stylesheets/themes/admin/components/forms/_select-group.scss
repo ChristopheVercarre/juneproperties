@@ -1,0 +1,26 @@
+.select-group {
+  @extend %position-relative, %mr-1;
+
+  &::after {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid $black;
+    content: '';
+    height: 0;
+    margin-top: -3px;
+    pointer-events: none;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 0;
+    z-index: 2;
+  }
+}
+
+.form-inline {
+  @extend %d-f, %align-c;
+
+  .custom-input {
+    @extend %pr-5;
+  }
+}

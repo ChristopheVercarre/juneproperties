@@ -1,0 +1,35 @@
+$white-paper-content-width-lg: 500px;
+
+.white-paper {
+  @extend .container;
+
+  &__header {
+    @extend %l-pt-1, %pb-3, %d-f, %justify-sb, %align-c;
+
+    &-left {
+      flex: 0 0 calc((100% - #{$white-paper-content-width-lg}) / 2);
+    }
+
+    &-center {
+      flex: 0 0 $white-paper-content-width-lg;
+    }
+
+    &-right {
+      flex: 0 0 calc((100% - #{$white-paper-content-width-lg}) / 2);
+    }
+  }
+
+  &__title {
+    @extend %text-c, %mb-3;
+  }
+
+  &__help {
+    @extend %text-c, %paragraph-large, %l-mb-2;
+  }
+
+  &__body {
+    @extend %my-0, %mx-a;
+
+    max-width: $white-paper-content-width-lg;
+  }
+}

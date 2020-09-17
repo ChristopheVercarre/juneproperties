@@ -1,0 +1,173 @@
+$btn--circle-size: 24px;
+$btn--circle-icon-size: $btn--circle-size / 3 * 2;
+
+.btn {
+  @extend %rounded-small, %px-3, %py-2, %text-small, %text-bold, %position-relative, %text-c, %d-b;
+
+  cursor: pointer;
+  flex: 0 0 auto;
+  line-height: 1.2;
+  min-width: 140px;
+  text-transform: capitalize;
+
+  &[disabled],
+  &[disabled="true"],
+  &[disabled="disabled"] {
+    cursor: not-allowed;
+    opacity: .75;
+  }
+
+  * {
+    pointer-events: none;
+  }
+
+  &--small {
+    @extend .btn, %text-small, %px-2;
+
+    min-width: 0;
+  }
+
+  &--xs {
+    @extend %rounded-small, %text-xs, %px-3, %py-2, %text-bold, %position-relative, %text-c, %d-b;
+
+    min-width: 0;
+  }
+
+  @each $color-name, $color-code in $all-colors {
+    &--#{$color-name} {
+      @if ($color-name == 'warning') {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-black, .btn, %border-2-#{$color-name};
+      } @else {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-white, .btn, %border-2-#{$color-name};
+      }
+    }
+
+    &--small--#{$color-name} {
+      @if ($color-name == 'warning') {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-black, .btn--small, %border-2-#{$color-name};
+      } @else {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-white, .btn--small, %border-2-#{$color-name};
+      }
+    }
+
+    &--xs--#{$color-name} {
+      @if ($color-name == 'warning') {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-black, .btn--xs, %border-2-#{$color-name};
+      } @else {
+        @extend %bg-#{$color-name}, %border-#{$color-name}, %text-white, .btn--xs, %border-2-#{$color-name};
+      }
+    }
+
+    &--outline--xs--#{$color-name} {
+      @if ($color-name == 'warning') {
+        @extend %bg-transparent, %border-2-#{$color-name}, %text-black, .btn--xs;
+      } @else {
+        @extend %bg-transparent, %border-2-#{$color-name}, %text-#{$color-name}, .btn--xs;
+      }
+
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        @extend .btn--xs--#{$color-name};
+      }
+    }
+  }
+
+  &--circle {
+    @extend %rounded-circle, %position-relative, %d-b;
+
+    height: $btn--circle-size;
+    transition: all ease-in-out .2s;
+    width: $btn--circle-size;
+
+    * {
+      pointer-events: none;
+    }
+
+    svg,
+    i {
+      @extend %position-absolute;
+
+      height: $btn--circle-icon-size;
+      left: ($btn--circle-size - $btn--circle-icon-size) / 2 - 1px;
+      top: ($btn--circle-size - $btn--circle-icon-size) / 2 - 1px;
+      transition: all ease-in-out .2s;
+      width: $btn--circle-icon-size;
+    }
+
+    @each $color-name, $color-code in $all-colors {
+      &--#{$color-name} {
+        @extend %bg-#{$color-name}, .btn--circle, %border-1-transparent;
+
+        svg,
+        i {
+          pointer-events: none;
+        }
+
+        svg * {
+          fill: $white;
+        }
+
+        &:hover {
+          @extend %bg-transparent, %border-1-#{$color-name};
+
+          svg * {
+            fill: $color-code;
+          }
+        }
+      }
+
+      &--outline-#{$color-name} {
+        @extend %bg-transparent, .btn--circle, %border-1-#{$color-name}, %text-#{$color-name};
+
+        &:hover {
+          @extend %border-transparent, %bg-gray;
+
+          svg,
+          i {
+            pointer-events: none;
+          }
+
+          svg * {
+            fill: $white;
+          }
+        }
+      }
+    }
+
+    &--close {
+      @extend .btn--circle--error;
+
+      &::before,
+      &::after {
+        @extend %position-absolute, %border-b-1-white;
+
+        content: '';
+        left: ($btn--circle-size - $btn--circle-icon-size) / 2 - 1px;
+        top: ($btn--circle-size) / 2 - 1px;
+        width: $btn--circle-icon-size;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &:hover {
+        &::after,
+        &::before {
+          @extend %border-b-1-error;
+        }
+      }
+    }
+  }
+
+  &--link {
+    @extend .btn, %border-0, %bg-transparent;
+
+    color: $gray !important;
+  }
+}

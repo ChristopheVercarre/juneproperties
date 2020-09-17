@@ -1,0 +1,27 @@
+.custom-select {
+  background: transparent;
+
+  &.pin_code {
+    @extend .p-1;
+
+    width: 30px;
+    border-radius: 0px;
+    box-sizing: content-box;
+    height: 50px;
+    flex-grow: 1;
+
+    @include media-breakpoint-up(md) {
+      width: 50px;
+    }
+
+    &:first-of-type {
+      border-top-left-radius: $input-border-radius;
+      border-bottom-left-radius: $input-border-radius;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: $input-border-radius;
+      border-bottom-right-radius: $input-border-radius;
+    }
+  }
+}

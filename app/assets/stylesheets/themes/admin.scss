@@ -1,0 +1,44 @@
+// config
+@import 'themes/admin/config/resets';
+@import 'themes/admin/config/mixins';
+@import 'themes/admin/config/colors';
+@import 'themes/admin/config/variables';
+@import 'themes/admin/config/borders';
+@import 'themes/admin/config/spacers';
+@import 'themes/admin/config/sizers';
+@import 'themes/admin/config/helpers';
+@import 'themes/admin/config/typography';
+@import 'themes/admin/config/flexbox';
+@import 'themes/admin/config/forms';
+@import 'themes/admin/config/animations';
+
+// components
+@import 'themes/admin/components/alert';
+@import 'themes/admin/components/avatar';
+@import 'themes/admin/components/badges';
+@import 'themes/admin/components/buttons';
+@import 'themes/admin/components/business-card';
+@import 'themes/admin/components/dropdown';
+@import 'themes/admin/components/forms/index';
+@import 'themes/admin/components/grid-table';
+@import 'themes/admin/components/icon-card';
+@import 'themes/admin/components/icon-circle';
+@import 'themes/admin/components/jumbotron';
+@import 'themes/admin/components/list';
+@import 'themes/admin/components/modal';
+@import 'themes/admin/components/pagination';
+@import 'themes/admin/components/side-tabs';
+@import 'themes/admin/components/timeline';
+@import 'themes/admin/components/tooltip';
+
+// themed layouts
+@import 'themes/admin/layouts/dashboard';
+@import 'themes/admin/layouts/overview-dashboard';
+@import 'themes/admin/layouts/white-paper';
+
+// shared layouts
+@import 'themes/admin/layouts/container';
+
+// external libraries and monkey patches
+@import 'themes/admin/vendor/flatpickr/patch';
+

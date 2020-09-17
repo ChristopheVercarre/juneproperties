@@ -1,0 +1,150 @@
+$card-control-side-spacing: $spacer;
+$card-slider-control-size: 35px;
+
+.card {
+  overflow: hidden;
+
+  &-room {
+    margin-bottom: $grid-gutter-width * 2;
+
+    &-img {
+      @extend .w-100;
+
+      height: 170px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &:hover {
+    .card-body {
+      h3 {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-horizontal{
+    color: $body-color;
+    font-family: Objektiv Mk1;
+
+    &-img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &-slider {
+    @extend .position-relative;
+
+    &-direction-btn {
+      @extend .position-absolute, .d-flex, .align-items-center, .justify-content-center, .rounded-circle, .bg-white;
+
+      top: calc(50% - #{$card-slider-control-size / 2});
+      height: $card-slider-control-size;
+      width: $card-slider-control-size;
+      z-index: 2;
+
+      svg {
+        width: $card-slider-control-size / 2;
+        height: $card-slider-control-size / 2;
+        object-fit: contain;
+      }
+    }
+
+    &-img {
+      height: 270px;
+      width: 100%;
+    }
+
+    &-prev {
+      left: $spacer / 2;
+    }
+
+    &-next {
+      right: $spacer / 2;
+    }
+
+    &-controls {
+      @extend .position-absolute, .d-flex;
+
+      align-items: center;
+      bottom: $card-control-side-spacing;
+      justify-content: center;
+      width: 100%;
+    }
+
+    &-control {
+      @extend .position-relative;
+
+      display: inline-block;
+      height: auto;
+      width: auto;
+
+      &::after {
+        @extend .rounded-circle, .shadow-sm, .mx-2, .bg-warning;
+
+        content: '';
+        position: relative;
+        display: block;
+        height: 6px;
+        width: 6px;
+        transition: all 0.2s ease-in-out;
+        opacity: 0.5;
+
+        &:hover::after {
+          opacity: 1;
+        }
+
+        &:not(:hover) {
+          @extend .bg-light;
+        }
+      }
+
+      &.active::after {
+        height: 8px;
+        width: 8px;
+        opacity: 1;
+
+        &:not(:hover) {
+          @extend .bg-white;
+
+        }
+      }
+    }
+  }
+
+  &-clickable {
+    @extend .py-5, .px-3;
+
+    height: 100%;
+    border: 2px solid $light;
+    box-shadow: $box-shadow;
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      box-shadow: $box-shadow-lg;
+      border-color: $black;
+
+      // [fill="#1A1A1A"] {
+      //   fill: $primary;
+      // }
+    }
+  }
+
+  &-clickable-dark {
+    border: 2px solid $white;
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      border-color: $warning;
+
+      // [fill="#1A1A1A"] {
+      //   fill: $primary;
+      // }
+    }
+  }
+}

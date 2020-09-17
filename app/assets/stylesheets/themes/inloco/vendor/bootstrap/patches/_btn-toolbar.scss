@@ -1,0 +1,65 @@
+$btn-toolbar-caret-height: 30px;
+
+.btn-toolbar {
+  flex-wrap: nowrap;
+  display: inline-flex;
+  width: auto;
+  border: none;
+
+  & > * {
+    border: 1px solid $gray-100;
+    border-radius: 0px;
+  }
+
+  & > :first-child {
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    border-right: none;
+    border-left: 1px solid $gray-100;
+  }
+
+  & > :last-child {
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    border-left: none;
+  }
+
+  & > :first-child {
+    border-left: 1px solid $gray-100;
+  }
+
+  .btn.btn-toolbar-btn {
+    @extend .h-100, .py-2, .d-flex, .align-items-center, .position-relative;
+
+    font-weight: normal;
+    font-size: $small-font-size;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: $input-padding-y $input-padding-x;
+
+    @include media-breakpoint-down(sm) {
+      padding: $input-padding-y ($input-padding-x);
+    }
+
+    * {
+      pointer-events: none;
+    }
+
+    svg {
+      @extend .mr-2;
+    }
+
+    &.active {
+
+      font-weight: 500;
+
+      &.btn-black.caret {
+        @extend .bg-black, .text-white, .icon-white, .caret-white, .border-black;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    width: 500px;
+  }
+}

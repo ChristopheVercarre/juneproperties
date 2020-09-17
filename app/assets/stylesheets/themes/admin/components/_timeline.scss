@@ -1,0 +1,73 @@
+$step-circle-size: 40px;
+
+.timeline {
+  @extend %d-f, %w-100, %justify-sb, %align-c, %position-relative;
+
+  margin-bottom: 4rem;
+
+
+  &__step {
+    @extend .icon-circle, %l-mx-1;
+
+    @each $color-name, $color-code in $transparent-theme-colors {
+      &--#{$color-name} {
+        @extend .timeline__step, .icon-circle--#{$color-name};
+      }
+    }
+
+    &--completed {
+      @extend .timeline__step;
+    }
+
+    &--not-complete {
+      @extend .timeline__step;
+    }
+
+    &--current {
+      @extend .timeline__step;
+    }
+  }
+
+  &__step-label {
+    @extend .icon-circle__label;
+  }
+
+  &__step-text {
+    @extend %position-absolute, %text-small, %text-c;
+
+    flex-shrink: 0;
+    top: calc(100% + #{$base-spacer * 2});
+    width: calc(100% + 4rem);
+    left: -2rem;
+
+    &--not-complete {
+      @extend .timeline__step-text, %text-gray;
+    }
+
+    &--completed {
+      @extend .timeline__step-text, %text-black;
+    }
+
+    &--current {
+      @extend .timeline__step-text--completed, %text-bold;
+    }
+
+    &--date {
+      @extend %text-gray, %mt-2, %text-light, %text-xs;
+    }
+  }
+
+  &__step-line {
+    flex-grow: 1;
+    height: 2px;
+    border-radius: 4px;
+
+    &--completed {
+      @extend .timeline__step-line, %bg-gray-light;
+    }
+
+    &--not-complete {
+      @extend .timeline__step-line, %bg-white-dark;
+    }
+  }
+}

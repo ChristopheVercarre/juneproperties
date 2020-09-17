@@ -1,0 +1,311 @@
+@import url("https://use.typekit.net/mqh8xtp.css");
+
+$font-family-base: Objektiv-mk1, sans-serif, Helvetica;
+
+// used for large titles like in the landing page or modals
+@mixin display($size: normal) {
+  font-family: $font-family-base;
+  font-weight: bold;
+  line-height: 1;
+
+  @if ($size == large) {
+    font-size: 56px;
+  } @else if ($size == normal) {
+    font-size: 36px;
+  } @else if ($size == small){
+    font-size: 28px;
+  } @else {
+    font-size: $size;
+  }
+}
+
+// used in non-multiline text
+@mixin text($size: normal, $bold: false) {
+  font-family: $font-family-base;
+  line-height: 1;
+
+  @if ($bold) {
+    font-weight: bold;
+  } @else {
+    font-weight: normal;
+  }
+
+  @if ($size == large) {
+    font-size: 18px;
+  } @else if ($size == normal) {
+    font-size: 16px;
+  } @else if ($size == small) {
+    font-size: 14px;
+  } @else if ($size == xs) {
+    font-size: 12px;
+  } @else {
+    font-size: $size;
+  }
+}
+
+@mixin text-muted($size: normal) {
+  font-family: $font-family-base;
+  line-height: 1;
+  letter-spacing: -.2px;
+  font-weight: lighter;
+  color: $gray;
+
+  @if ($size == normal) {
+    font-size: 14px;
+  } @else if ($size == small) {
+    font-size: 12px;
+  } @else {
+    font-size: $size;
+  }
+}
+
+// used in multiline text
+@mixin paragraph($size: normal) {
+  @include text($size, false);
+
+  font-weight: lighter;
+  line-height: 150%;
+  word-wrap: break-word;
+}
+
+// used for page and section titles
+@mixin title($size: normal) {
+  font-family: $font-family-base;
+  line-height: 1;
+  letter-spacing: -.4px;
+
+  @if ($size == large) {
+    font-size: 40px;
+    font-weight: bolder;
+  } @else if ($size == normal) {
+    font-size: 24px;
+    font-weight: bold;
+  } @else if ($size == small){
+    font-size: 18px;
+    font-weight: bold;
+  } @else {
+    font-size: $size;
+    font-weight: bold;
+  }
+}
+
+// used for page and section subtitles
+@mixin subtitle($size: normal) {
+  font-family: $font-family-base;
+  line-height: 1;
+  letter-spacing: -.4px;
+
+  @if ($size == large) {
+    font-size: 20px;
+    font-weight: bolder;
+  } @else if ($size == normal) {
+    font-size: 14px;
+    font-weight: bold;
+  } @else if ($size == small){
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+// used for forms, table headers, badges, etc.
+@mixin label($size: normal) {
+  font-family: $font-family-base;
+  line-height: 1;
+  letter-spacing: -.2px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  @if ($size == normal) {
+    font-size: 12px;
+  } @else if ($size == small) {
+    font-size: 10px;
+  } @else {
+    font-size: $size;
+  }
+}
+
+// used for links
+@mixin link {
+  @extend %text-black;
+
+  font-size: inherit;
+}
+
+%display-large {
+  @include display(large);
+}
+
+%display {
+  @include display;
+}
+
+%display-small {
+  @include display(small);
+}
+
+%text-large {
+  @include text(large);
+}
+
+:root,
+%text {
+  @include text;
+}
+
+small,
+%text-small {
+  @include text(small);
+}
+
+%text-xs {
+  @include text(xs);
+}
+
+%text-muted {
+  @include text-muted;
+}
+
+%text-muted-small {
+  @include text-muted(small);
+}
+
+p,
+%paragraph {
+  @include paragraph;
+}
+
+.large,
+%paragraph-large {
+  @include paragraph(large);
+}
+
+.small,
+%paragraph-small {
+  @include paragraph(small);
+}
+
+h1,
+%title-large {
+  @include title(large);
+}
+
+h2,
+%title {
+  @include title;
+}
+
+h3,
+%title-small {
+  @include title(small);
+}
+
+h4,
+%subtitle-large {
+  @include subtitle(large);
+}
+
+h5,
+%subtitle {
+  @include subtitle;
+}
+
+h6,
+%subtitle-small {
+  @include subtitle(small);
+}
+
+label,
+th,
+%label {
+  @include label;
+}
+
+%label-small {
+  @include label(small);
+}
+
+.label {
+  @extend %label, %text-gray, %mb-4;
+}
+
+.label--small {
+  @extend %label-small, %text-gray, %mb-4;
+}
+
+
+@each $option-initial, $option in $text-align-options {
+  %text-#{$option-initial} {
+    text-align: $option;
+  }
+}
+
+%text-bold,
+b,
+.text--bold {
+  font-weight: bold;
+}
+
+%text-normal,
+.text--normal {
+  font-weight: normal;
+}
+
+%text-light,
+small,
+.text--light {
+  font-weight: lighter;
+}
+
+a {
+  @include link;
+}
+
+strong {
+  @extend %label-small;
+}
+
+%link-gray {
+  @extend %text-gray, %text-small;
+
+  text-decoration: underline;
+
+  &:hover {
+    @extend %text-success;
+  }
+}
+
+dl {
+  @extend %text-l;
+}
+
+dt {
+  @extend %label-small, %text-gray, %mb-1;
+}
+
+dd {
+  @extend %text-small, %d-b;
+
+  strong,
+  small,
+  del,
+  span {
+    @extend %d-ib, %my-2;
+  }
+
+  & + dt {
+    @extend %mt-3;
+  }
+
+  & + dd {
+    @extend %mt-4;
+  }
+}
+
+del {
+  @extend %text-gray, %text-small;
+
+}
+
+.text--alert {
+  @extend %label-small, %text-error, %mb-4;
+}

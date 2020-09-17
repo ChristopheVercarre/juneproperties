@@ -1,0 +1,24 @@
+body{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px minmax(80px, 1fr) minmax(768px, 1100px) minmax(80px, 1fr);
+  justify-content: center;
+  font-family: $admin-font;
+  font-size: 16px;
+}
+main {
+  grid-column:3;
+  margin-top: 24px;
+}
+a{
+  text-decoration: none;
+  color: $sec-admin;
+  transition: $ease;
+}
+a:hover,
+a.active{
+  color: $pri-admin;
+}
+.unable a{
+  color: $lGrey-admin;
+}

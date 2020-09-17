@@ -1,0 +1,36 @@
+$fake-modal-header-height: $navbar-height;
+$fake-modal-content-height: calc(100vh - #{$navbar-height});
+
+.fake-modal {
+  height: 100vh;
+
+  &-header {
+    @extend .position-absolute, .w-100;
+
+    top: 0;
+  }
+
+  &-main {
+    @extend .position-absolute, .w-100, .d-flex, .flex-column, .justify-content-center;
+
+    top: $fake-modal-header-height;
+    min-height: $fake-modal-content-height;
+    padding-bottom: $navbar-height * 2;
+    padding-top: $grid-gutter-width * 2;
+  }
+
+  &-container {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 $grid-gutter-width;
+
+    @include media-breakpoint-up(sm) {
+      width: 500px;
+      padding: 0;
+    }
+  }
+
+  &-container-lg {
+    @extend .container;
+  }
+}

@@ -1,0 +1,69 @@
+.text-large {
+  font-size: 21px;
+}
+
+.font-family-text {
+  font-family: $text-font !important;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 4px rgba($black, .16);
+}
+
+.label {
+  font-family: $text-font;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.label-sm {
+  font-size: 11px;
+}
+
+.label-lg {
+  font-size: $font-size-base;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-normal {
+  font-size: $base-font-size;
+}
+
+q {
+  position: relative;
+  font-weight: 300;
+  letter-spacing: .3px;
+  overflow-wrap: break-word;
+
+  &::before,
+  &::after {
+    object-fit: contain;
+    left: 0;
+    display: inline-block;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    content:  asset-data-url('icons/quotes.svg');
+    z-index: -1;
+  }
+
+  &::after {
+    float: right;
+  }
+}
+
+.lead {
+  strong {
+    font-weight: bold;
+  }
+}
+
+.display-lead {
+  @include font-size(2rem);
+
+  line-height: 1.5;
+}

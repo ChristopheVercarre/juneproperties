@@ -1,0 +1,307 @@
+.button {
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 13px;
+  cursor: pointer;
+  transition: $ease;
+  padding: .75rem 2.5rem;
+}
+
+.button.orange {
+  background: $peach;
+  border: 1px solid $peach;
+  box-shadow: 0 3px 6px rgba(252,129,82,.5);
+}
+
+.button:hover.orange {
+  color: $peach;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $peach;
+}
+
+.button.blue {
+  background: $coloc-cyan;
+  border: 1px solid $coloc-cyan;
+  box-shadow: 0 3px 6px rgba(67, 142, 147,.5);
+}
+
+.button:hover.blue {
+  color: $coloc-cyan;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $coloc-cyan;
+}
+
+.button.grey {
+  background: $grey;
+  border: 1px solid $grey;
+}
+
+.button:hover.grey {
+  color: $grey;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $grey;
+}
+
+.button.light-grey {
+  background: $light-grey;
+  border: 1px solid $light-grey;
+}
+
+.button:hover.light-grey {
+  color: $light-grey;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $light-grey;
+}
+
+.button.facebook {
+  background: $facebook;
+  border: 1px solid $facebook;
+}
+
+.button:hover.facebook {
+  color: $facebook;
+  background: transparent;
+  border: 1px solid $facebook;
+}
+
+.button.invest {
+  background: $invest;
+  border: 1px solid $invest;
+  box-shadow: 0 3px 6px rgba(67,136,203,.5);
+}
+
+.button:hover.invest {
+  color: $invest;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $invest;
+}
+
+.button.dark-white {
+  color: $light-grey;
+  background: $dark-white;
+  border: 1px solid $dark-white;
+  box-shadow: 0 3px 6px rgba(222, 229, 234,1);
+}
+
+.button:hover.dark-white {
+  color: $light-grey;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $light-grey;
+}
+
+.button.white {
+  color: $light-grey;
+  background: white;
+  border: 1px solid white;
+  box-shadow: 0 3px 6px rgba(102, 117, 127,.16);
+}
+
+.button:hover.white {
+  color: white !important;
+  background: $light-grey;
+  box-shadow: none;
+  border: 1px solid $light-grey;
+  box-shadow: 0 3px 6px rgba(102, 117, 127,.16);
+}
+
+.button.transparent {
+  color: white;
+  border: 1px solid white;
+}
+
+.button.transparent:hover {
+  color: $peach;
+  background: white;
+}
+
+.button.underline {
+  color: $grey;
+  border-bottom: 1px solid $light-grey;
+  margin: 0;
+  width: auto;
+  display: inline-block;
+  border-radius: 0;
+}
+
+.button.underline:hover {
+  color: $peach;
+  border-bottom-color: $peach;
+}
+
+.button.dark-blue {
+  color: white;
+  background: $dark-blue;
+  border: 1px solid $dark-blue;
+}
+
+.button:hover.dark-blue {
+  color: $dark-blue;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $dark-blue;
+}
+// For gradient trick. Add a :before with a opacity of 0.
+
+.button.gradient-orange {
+  background: $gr-orange;
+  border: 1px solid $peach;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(252,129,82,.5);
+}
+
+.button.gradient-orange::before {
+  border-radius: inherit;
+  background: linear-gradient(#fff, #fff);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  transition: opacity 0.3s;
+}
+
+.button.gradient-orange:hover {
+  box-shadow: none;
+  color: $peach;
+}
+
+.button.gradient-orange:hover::before {
+  opacity: 1;
+}
+
+.button.gradient-blue {
+  background: $gr-blue;
+  border: 1px solid $coloc-cyan;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(67, 142, 147,.5);
+}
+
+.button.gradient-blue::before {
+  border-radius: inherit;
+  background: linear-gradient(#fff, #fff);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  transition: opacity 0.3s;
+}
+
+.button.gradient-blue:hover {
+  box-shadow: none;
+  color: $coloc-cyan;
+}
+
+.button.gradient-blue:hover::before {
+  opacity: 1;
+}
+
+.button.gradient-invest {
+  background: $gr-invest;
+  border: 1px solid $invest;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(67, 136, 203,.5);
+}
+
+.button.gradient-invest::before {
+  border-radius: inherit;
+  background: linear-gradient(#fff, #fff);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  transition: opacity 0.3s;
+}
+
+.button.gradient-invest:hover {
+  box-shadow: none;
+  color: $invest;
+}
+
+.button.gradient-invest:hover::before {
+  opacity: 1;
+}
+
+.button-outline {
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-outline.grey {
+  color: $light-grey;
+  border: 1px solid $light-grey;
+}
+
+.button-outline:hover.grey {
+  color: #fff;
+  background: $light-grey;
+}
+
+.button.disabled {
+  // opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+// Admin buttons
+.button.pink {
+  font-size: 14px;
+  background: $pri-admin;
+  border: 1px solid $pri-admin;
+  box-shadow: 0 3px 6px rgba(241,91,121,.5);
+}
+.button.pink:disabled {
+  background-color: lighten( $pri-admin, 10% );
+  border: 1px solid lighten( $pri-admin, 10% );
+}
+.button:hover.pink:not([disabled]) {
+  color: $pri-admin;
+  background: white;
+  box-shadow: none;
+  border: 1px solid $pri-admin;
+}
+.button.aBlue {
+  background: $sec-admin;
+  border: 1px solid $sec-admin;
+  box-shadow: 0 3px 6px rgba(29,68,110,.5);
+}
+.button:hover.aBlue {
+  color: $sec-admin;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid $sec-admin;
+}
+.button.select{
+  font-size: 14px;
+  color:$sec-admin;
+  background: white;
+  border: 1px solid white;
+  box-shadow: 0 3px 6px rgba(29,68,110,.16);
+}

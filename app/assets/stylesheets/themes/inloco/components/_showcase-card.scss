@@ -1,0 +1,30 @@
+.showcase-card {
+  height: 50vh;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    height: 600px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: 300px;
+  }
+
+  &-img {
+    height: $showcase-card-img-height;
+  }
+
+  &-content {
+    @extend .p-3;
+
+    background: rgba($white, 0.7);
+  }
+
+  &-heading {
+    @extend .mb-1;
+  }
+
+  &-subheading {
+    @extend .mb-0;
+  }
+}

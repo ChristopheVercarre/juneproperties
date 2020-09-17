@@ -1,0 +1,33 @@
+$base-dimension: .1;
+$min-multiplier: 0;
+$max-multiplier: 10;
+
+@for $multiplier from $min-multiplier through $max-multiplier {
+  $percentage: $base-dimension * $multiplier * 100;
+
+  @each $dimension-letter, $dimension in $dimension-options {
+    %#{$dimension-letter}-#{$percentage} {
+      #{$dimension}: $percentage * 1%;
+    }
+
+    %#{$dimension-letter}-#{$percentage}vh {
+      #{$dimension}: $percentage * 1vh;
+    }
+
+    %#{$dimension-letter}-#{$percentage}vw {
+      #{$dimension}: $percentage * 1vw;
+    }
+  }
+
+  @each $direction-letter, $direction in $direction-options {
+    %#{$direction-letter}-#{$percentage} {
+      #{$direction}: $percentage * 1%;
+    }
+  }
+}
+
+@each $dimension-letter, $dimension in $dimension-options {
+  %#{$dimension-letter}-a {
+    #{$dimension}: auto;
+  }
+}

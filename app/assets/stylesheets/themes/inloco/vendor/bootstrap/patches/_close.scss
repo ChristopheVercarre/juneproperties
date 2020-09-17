@@ -1,0 +1,18 @@
+.close {
+  position: relative;
+  color: transparent !important;
+
+  span {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    content: asset-data-url('icons/close.svg');
+  }
+}

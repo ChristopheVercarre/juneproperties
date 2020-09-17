@@ -1,0 +1,41 @@
+.tabs {
+  @extend %w-100, %h-100;
+
+  &__nav {
+    @extend %d-f, %justify-fs, %border-b-2-white-dark;
+  }
+
+  &__tab {
+    @extend %label-small, %text-c, %text-gray, %border-b-2-transparent, %py-4, %px-5;
+
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      @extend %text-black;
+    }
+
+    &.active {
+      @extend %text-black, %border-b-2-black;
+    }
+
+    &--with-alert {
+      @extend .tabs__tab, %position-relative, %text-error;
+
+      &::after {
+        @extend %rounded-circle, %position-absolute, %t-20, %r-10, %bg-error;
+
+        content: '';
+        height: 4px;
+        width: 4px;
+      }
+    }
+  }
+
+  &__tab-content {
+    @extend %h-100, %d-n, %px-5, %l-py-1;
+
+    &.show {
+      @extend %d-b;
+    }
+  }
+}

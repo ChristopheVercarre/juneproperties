@@ -1,0 +1,8 @@
+.lazy {
+  object-fit: cover;
+
+  &.loading {
+    filter: blur(5px);
+    transition: filter 1s;
+  }
+}

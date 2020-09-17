@@ -1,0 +1,35 @@
+.pagination {
+  @extend %d-f, %w-100, %justify-c, %align-c, %py-4;
+
+  &__body {
+    @extend %d-f, %justify-c, %align-c;
+  }
+
+  &__page {
+    @extend %text-gray, %d-f, %justify-c, %align-c, %px-3, %d-b;
+
+    &--last {
+      @extend %text-black, %d-f, %justify-c, %align-c, %px-3, %d-b;
+    }
+
+    &--first {
+      @extend .pagination__page--last;
+    }
+
+    &--prev {
+      @extend .pagination__page--last;
+    }
+
+    &--gap {
+      @extend .pagination__page;
+    }
+
+    &--next {
+      @extend .pagination__page--last;
+    }
+
+    &--current {
+      @extend .pagination__page, %text-bold;
+    }
+  }
+}
