@@ -3,3 +3,27 @@
 
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+
+<%= display_meta_tags(
+      site: 'juneproperties',
+      title: 'Furnished Apartments near EU institutions',
+      description: 'We offer you three recently renovated apartments at Rue de Spa 32 with parking and 24/7 property assistance included.',
+      keywords: 'june properties',
+      og: {
+        card: 'summary',
+        site: '@juneproperties',
+        creator: '@juneproperties',
+        url: 'http://www.juneproperties.be',
+        title: 'Furnished Apartments near EU institutions',
+        description: 'We offer you three recently renovated apartments at Rue de Spa 32 with parking and 24/7 property assistance included.'
+      },
+      twitter: {
+        title: 'Furnished Apartments near EU institutions',
+        description: 'We offer you three recently renovated apartments at Rue de Spa 32 with parking and 24/7 property assistance included.',
+        image: image_url('seo.jpg'),
+        type: 'website',
+        url: 'http://www.juneproperties.be'
+      }
+    ) %>
+
+<%= yield :meta_tags %>
